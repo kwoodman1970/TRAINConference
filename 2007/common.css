@@ -1,0 +1,239 @@
+.Blink
+{
+  text-decoration:  blink;
+}
+
+.NoWrap
+{
+  white-space:  nowrap;
+}
+
+.Required
+{
+  color:  red;
+}
+
+.Underline
+{
+  text-decoration:  underline;
+}
+
+A:link
+{
+  color:  #0000CC;
+}
+
+A:visited
+{
+  color:  #CC00CC;
+}
+
+A:hover
+{
+  color:  #00CCFF;
+}
+
+BODY
+{
+  color:  black;
+  background-color:  #FFCC33;
+  background-image:  url("/background.gif");
+  background-position:  center center;
+  background-repeat:  no-repeat;
+  background-attachment:  fixed;
+}
+
+@media screen
+{
+  BODY
+  {
+    font-family:  sans-serif;
+  }
+}
+
+DIV.Slogan
+{
+  font-family:  sans-serif;
+  font-weight:  bold;
+  font-size:  125%;
+  font-variant:  small-caps;
+}
+
+H1
+{
+  text-align:  center;
+}
+
+@media screen
+{
+  HR
+  {
+    border:  0px;
+    color:  #FF9900;
+    background-color:  #FF9900;
+    background-image:  url("/constructionBarrier.gif");
+    background-repeat:  repeat-x;
+    height:  15px;
+  }
+}
+
+IMG
+{
+  margin:  0px;
+  border:  0px;
+  padding:  0px;
+}
+
+IMG.HeaderLeft
+{
+  float:  left;
+  width:  127px;
+  height:  100px;
+}
+
+IMG.HeaderCentre
+{
+  width:  244px;
+  height:  100px;
+}
+
+IMG.HeaderRight
+{
+  float:  right;
+  width:  156px;
+  height:  100px;
+}
+
+IMG.New
+{
+  width:  45px;
+  height:  23px;
+  vertical-align:  middle;
+  font-weight:  bold;
+}
+
+IMG#RSS
+{
+  width:  36px;
+  height:  14px;
+  margin:  2px;
+  vertical-align:  middle;
+  background-color:  #FF6800;
+  color:  white;
+  font-weight:  bold;
+}
+
+IMG#RSSIcon
+{
+  width:  16px;
+  height:  16px;
+  margin:  2px;
+  vertical-align:  middle;
+}
+
+IMG.Valid
+{
+  width:  88px;
+  height:  31px;
+}
+
+LI
+{
+  list-style-image:  url("/hardhat.gif");
+}
+
+@media screen
+{
+  LI
+  {
+    list-style-image:  url("/hardhatScreen.gif");
+  }
+}
+
+H2 + P:first-letter,
+H2 + H3 + P:first-letter,
+H2 + TABLE + P:first-letter,
+H2 + H3 + TABLE + P:first-letter,
+H2 + IMG + P:first-letter,
+H2 + H3 + IMG + P:first-letter
+{
+  font-size:  150%;
+  font-family:  serif;
+}
+
+/*
+H2 + P:first-letter, H3 + P:first-letter, HR + P:first-letter, H3 + *[STYLE="float:right;,float:left;"] + P:first-letter
+{
+  font-size:  150%;
+  font-family:  serif;
+}
+*/
+
+P#AddToOnlineServices
+{
+  text-align:  center;
+}
+
+P#AddToOnlineServices A
+{
+  outline:  none;
+}
+
+P#AddToOnlineServices IMG
+{
+  margin:  13px;
+  vertical-align:  middle;
+}
+
+SELECT:focus
+{
+  background-color:lime;
+}
+
+TABLE
+{
+  margin:  1px;
+  padding:  1px;
+  vertical-align:  top;
+}
+
+TABLE > TBODY > TR > TD > H4
+{
+  margin:  0px;
+}
+
+TABLE.Border
+{
+  border:  2px outset #FFCC33;
+  margin-bottom:  1em;
+}
+
+TABLE.Border > TBODY > TR > TD, TABLE.Border > TBODY > TR > TH
+{
+  border:  2px inset #FFCC33;
+}
+
+TD
+{
+  padding:  2px;
+  vertical-align:  top;
+  text-align:  left;
+}
+
+TD.Fee
+{
+  text-align:  right;
+  font-weight:  bold;
+}
+
+TD.Required
+{
+  text-align:  right;
+}
+
+TH
+{
+  padding:  2px;
+  vertical-align:  top;
+  text-align:  center;
+}

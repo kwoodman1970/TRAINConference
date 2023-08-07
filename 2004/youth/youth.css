@@ -1,0 +1,25 @@
+BODY
+{
+  background-image:  none;
+  background-color:  white;
+  color:  black;
+}
+
+TH
+{
+  background-color:  black;
+  color:  white;
+  text-align:  right;
+  font-weight:  normal;
+  white-space:  nowrap;
+}
+
+TD
+{
+  background-color:  #EBB499;
+}
+
+TD H3
+{
+  margin-top:  0px;
+}

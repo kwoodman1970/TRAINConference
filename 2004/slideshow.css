@@ -1,0 +1,19 @@
+DIV.SlideshowSlide
+{
+  margin:  4px;
+  border:  2px solid #798B41;
+  right:  0px;
+  text-align:  center;
+}
+
+IMG.SlideshowImage
+{
+  width:  480px;
+  height:  360px;
+}
+
+DIV.Slideshow P
+{
+  margin:  2px;
+  text-align:  left;
+}

@@ -1,0 +1,142 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+
+<HTML>
+
+<HEAD>
+  <LINK REL="shortcut icon" HREF="../train.ico">
+
+  <TITLE>TRAIN 2004 Conference -- NetConnect -- Dream Status Update</TITLE>
+
+  <META HTTP-EQUIV="Content-Type"        CONTENT="text/html;charset=iso-8859-1">
+  <META HTTP-EQUIV="Content-Script-Type" CONTENT="text/javascript">
+
+  <LINK REL="stylesheet" HREF="../common.css" TYPE="text/css">
+  <LINK REL="stylesheet" HREF="forms.css" TYPE="text/css">
+
+  <!--[IF IE 6]>
+    <LINK REL="stylesheet" HREF="../ie6hacks.css" TYPE="text/css">
+  <![ENDIF]-->
+
+  <SCRIPT TYPE="text/javascript" SRC="forms.js"></SCRIPT>
+  <SCRIPT TYPE="text/javascript">
+    <!--
+
+    function isFormValid(form)
+    {
+      var submit = true;
+
+      if (
+        (form.realname.value == "") ||
+        (form.email.value    == ""))
+      {
+        alert("Please provide both your name and e-mail address.");
+        submit = false;
+      }
+
+      if (form.dream.value == "")
+      {
+        alert("You didn't tell us what your dream was.");
+        submit = false;
+      }
+
+      if (form.update.value == "")
+      {
+        alert("You didn't include any update information!");
+        submit = false;
+      }
+
+      return submit;
+    }
+
+    //-->
+  </SCRIPT>
+</HEAD>
+
+<BODY>
+
+<H1>NetConnect &#8211; Dream Status Update</H1>
+
+<HR>
+
+<!--FORM STYLE="text-align:center;" NAME="dreamStatus" METHOD=POST ACTION="/cgi-bin/formmail"-->
+<FORM STYLE="text-align:center;" NAME="dreamStatus" METHOD=POST ACTION="formReceived.html">
+  <DIV STYLE="display:none;">
+    <INPUT TYPE=HIDDEN NAME="subject"                 VALUE="TRAIN NetConnect Dream Status Update">
+    <INPUT TYPE=HIDDEN NAME="redirect"                VALUE="/forms/formReceived.html">
+    <INPUT TYPE=HIDDEN NAME="required"                VALUE="realname,email,dream,update">
+    <INPUT TYPE=HIDDEN NAME="sort"                    VALUE="order:city,ageRange,dream,update">
+    <INPUT TYPE=HIDDEN NAME="recipient"               VALUE="dreamstate@trainconference.com">
+    <INPUT TYPE=HIDDEN NAME="print_blank_fields"      VALUE="1">
+    <INPUT TYPE=HIDDEN NAME="missing_fields_redirect" VALUE="/forms/formInvalid.html">
+  </DIV>
+
+  <TABLE>
+    <TR>
+      <TD>Your name:</TD>
+      <TD CLASS="Required">*</TD>
+      <TD><INPUT TYPE=TEXT NAME="realname" SIZE=40></TD>
+    </TR>
+    <TR>
+      <TD>Your e-mail address:</TD>
+      <TD CLASS="Required">*</TD>
+      <TD><INPUT TYPE=TEXT NAME="email" SIZE=40 onChange="validateEmail(this)"></TD>
+    </TR>
+    <TR>
+      <TD>Your city or town:</TD>
+      <TD></TD>
+      <TD><INPUT TYPE=TEXT NAME="city" SIZE=20></TD>
+    </TR>
+    <TR>
+      <TD>Your age range:</TD>
+      <TD></TD>
+      <TD>
+        <SELECT NAME="ageRange">
+          <OPTION>
+          <OPTION>Teen
+          <OPTION>20's
+          <OPTION>30's
+          <OPTION>40's
+          <OPTION>50's
+          <OPTION>60+
+        </SELECT>
+      </TD>
+    </TR>
+    <TR>
+      <TD>Your dream from the last conference:</TD>
+      <TD CLASS="Required">*</TD>
+      <TD><INPUT TYPE=TEXT NAME="dream" SIZE=40></TD>
+    </TR>
+    <TR>
+      <TD>What's happened to date:</TD>
+      <TD CLASS="Required">*</TD>
+      <TD>
+        <TEXTAREA NAME="update" ROWS=5 COLS=40></TEXTAREA>
+      </TD>
+    </TR>
+    <TR>
+      <TD>
+        May we share your story (anonymously) on Saturday morning at TRAIN
+        2004?
+      </TD>
+      <TD></TD>
+      <TD>
+        <INPUT TYPE=RADIO NAME="canShare" VALUE="Yes" checked>Yes<BR>
+        <INPUT TYPE=RADIO NAME="canShare" VALUE="No">No<BR>
+      </TD>
+    </TR>
+  </TABLE>
+
+  <P>
+    <SPAN CLASS="Required">*</SPAN> Information is required for these entries.
+  </P>
+
+  <P>
+    <INPUT TYPE=SUBMIT VALUE="Submit" ONCLICK="return isFormValid(this.form)">
+    <INPUT TYPE=RESET VALUE="Start over">
+    <INPUT TYPE=BUTTON VALUE="Cancel" ONCLICK="window.close()">
+  </P>
+</FORM>
+
+</BODY>
+
+</HTML>

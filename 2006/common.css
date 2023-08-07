@@ -1,0 +1,159 @@
+.Blink
+{
+  text-decoration:  blink;
+}
+
+.NoWrap
+{
+  white-space:  nowrap;
+}
+
+.Required
+{
+  color:  red;
+}
+
+.Underline
+{
+  text-decoration:  underline;
+}
+
+A:link
+{
+  color:  blue;
+}
+
+A:visited
+{
+  color:  fuchsia;
+}
+
+BODY
+{
+  color:  black;
+  background-color:  white;
+  background-image:  url("background.gif");
+  background-position:  center center;
+  background-repeat:  no-repeat;
+  background-attachment:  fixed;
+}
+
+@media screen
+{
+  BODY
+  {
+    font-family:  sans-serif;
+  }
+}
+
+H1
+{
+  text-align:  center;
+}
+
+HR
+{
+  color:  #8B99B7;
+  background-color:  #8B99B7;
+  height:  4px;
+}
+
+IMG
+{
+  margin:  0px;
+  border:  0px;
+  padding:  0px;
+}
+
+IMG.HeaderLeft
+{
+  float:  left;
+  width:  95px;
+  height:  100px;
+}
+
+IMG.HeaderCentre
+{
+  width:  244px;
+  height:  100px;
+}
+
+IMG.HeaderRight
+{
+  float:  right;
+  width:  171px;
+  height:  100px;
+}
+
+IMG.New
+{
+  width:  45px;
+  height:  23px;
+  vertical-align:  middle;
+}
+
+IMG.RSS
+{
+  width:  36px;
+  height:  14px;
+  margin:  2px;
+  vertical-align:  middle;
+  background-color:  #FF6800;
+  color:  white;
+  font-weight:  bold;
+}
+
+IMG.Valid
+{
+  width:  88px;
+  height:  31px;
+}
+
+TABLE
+{
+  margin:  1px;
+  padding:  1px;
+  vertical-align:  top;
+}
+
+TABLE > TBODY > TR > TD > H4
+{
+  margin:  0px;
+}
+
+TABLE.Border
+{
+  border:  2px outset #8B99B7;
+  margin-bottom:  1em;
+  background-color:  white;
+}
+
+TABLE.Border > TBODY > TR > TD, TABLE.Border > TBODY > TR > TH
+{
+  border:  2px inset #8B99B7;
+}
+
+TD
+{
+  padding:  2px;
+  vertical-align:  top;
+  text-align:  left;
+}
+
+TD.Fee
+{
+  text-align:  right;
+  font-weight:  bold;
+}
+
+TD.Required
+{
+  text-align:  right;
+}
+
+TH
+{
+  padding:  2px;
+  vertical-align:  top;
+  text-align:  center;
+}

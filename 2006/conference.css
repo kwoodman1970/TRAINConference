@@ -1,0 +1,43 @@
+TABLE.Schedule
+{
+  width:  33%;
+  float:  left;
+  background-color:  #A0B4D0;
+  margin-bottom:  1em;
+}
+
+TABLE.Schedule TH
+{
+  background-color:  #487CB0;
+  color:  white;
+}
+
+TABLE.Schedule TD.Time
+{
+  text-align:  right;
+}
+
+TABLE.Schedule TD.Highlight
+{
+  background-color:  #E8F0D0;
+}
+
+TABLE.Schedule TD.SessionA
+{
+  background-color:  #A88060;
+}
+
+TABLE.Schedule TD.SessionB
+{
+  background-color:  #70C048;
+}
+
+TABLE.Schedule TD.SessionC
+{
+  background-color:  #A88060;
+}
+
+TABLE.Schedule TD.SessionD
+{
+  background-color:  #70C048;
+}

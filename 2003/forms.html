@@ -1,0 +1,232 @@
+<HTML>
+
+<HEAD>
+  <TITLE>TRAIN 2003 Conference -- Forms</TITLE>
+
+  <SCRIPT LANGUAGE="JavaScript" SRC="common.js"></SCRIPT>
+  <SCRIPT LANGUAGE="JavaScript" SRC="forms.js"></SCRIPT>
+</HEAD>
+
+<BODY BGCOLOR=#0080FF BACKGROUND="background.gif" TEXT=#FFFFFF LINK=#00FFFF VLINK=#FF80FF>
+
+<P ALIGN=CENTER>
+  <IMG SRC="20thAnniversary.jpg" WIDTH=106 HEIGHT=150 ALIGN=LEFT>
+  <IMG SRC="daringToDream.jpg" WIDTH=145 HEIGHT=150 ALIGN=RIGHT>
+  <IMG SRC="logoComplete.gif" WIDTH=439 HEIGHT=180>
+</P>
+
+<H3 ALIGN=CENTER>TEACHING&nbsp;RESOURCING&nbsp;AFFIRMING&nbsp;INSPIRING&nbsp;NETWORKING</H3>
+
+<P ALIGN=CENTER>
+  <I>This page last updated:</I>  <B>2003/11/15</B><BR>
+  &nbsp;<BR>
+</P>
+
+<TABLE>
+  <TR>
+    <TD VALIGN=TOP WIDTH=250>
+      <SCRIPT LANGUAGE="JavaScript">
+        writeMenuItem("home", "Home");
+        writeMenuItem("conference", "Conference Information");
+        writeMenuItem("netconnect", "NetConnect");
+        writeMenuItem("forms", "Forms");
+        writeMenuItem("whoWeAre", "Who We Are");
+      </SCRIPT>
+      <NOSCRIPT>
+        JavaScript is required to view this website.
+      </NOSCRIPT>
+
+      <UL>
+        <LI><A HREF="#request">Request for Brochures &amp; Posters</A></LI>
+        <LI><A HREF="#registration">Registration Form</A></LI>
+      </UL>
+    </TD>
+    <TD VALIGN=TOP>
+      <HR>
+
+      <H1 ALIGN=CENTER>Forms</H1>
+
+      <P>
+        The TRAIN 2003 Conference is now <BLINK>over</BLINK>, so there's <B>no
+        point in submitting any of these forms</B> to us.
+      </P>
+
+      <P><HR></P>
+
+      <P>
+        You have the choice of using either <B>paper</B> or <B>electronic</B>
+        forms.  If you are unable to view or print any of the paper forms then
+        you may need to install
+        <A HREF="http://www.adobe.com/products/acrobat/readstep2.html">Adobe
+        Reader</A> on your computer.
+      </P>
+
+      <P>
+        Paper forms may be either <A HREF="whoWeAre.html#contact">mailed or
+        faxed</A> to us.
+      </P>
+
+      <P><HR></P>
+
+      <A NAME="request">
+      <H2>Request for Brochures &amp; Posters</H2>
+
+      <P>
+        Please submit your form by <BLINK>July 31, 2003</BLINK>.
+      </P>
+
+      <TABLE>
+        <TR>
+          <TD VALIGN=TOP><H3>Paper&nbsp;Form:</H3></TD>
+          <TD VALIGN=TOP>
+            <A HREF="rqBrochures.pdf">Click here</A> to get the paper form.
+          </TD>
+        </TR>
+        <TR>
+          <TD VALIGN=TOP><H3>Electronic&nbsp;Form:</H3></TD>
+          <TD VALIGN=TOP>
+            <!--FORM NAME="rqBrochures" METHOD=POST ACTION="/cgi-bin/formmail"-->
+            <FORM NAME="rqBrochures" METHOD=POST ACTION="formReceived.html">
+              <INPUT TYPE=HIDDEN NAME="subject"            VALUE="Request for Brochures &amp; Posters">
+              <INPUT TYPE=HIDDEN NAME="redirect"           VALUE="../formReceived.html">
+              <INPUT TYPE=HIDDEN NAME="sort"               VALUE="order:ChurchName,Denomination,Address,City,Province,PostalCode,Phone,Fax,ChurchEmail,ChurchWebsite,ContactPosition,NumBrochuresRequested,NumPostersRequested">
+              <INPUT TYPE=HIDDEN NAME="recipient"          VALUE="forms@trainconference.com">
+              <INPUT TYPE=HIDDEN NAME="print_blank_fields" VALUE="1">
+              <TABLE BORDER>
+                <TR>
+                  <TD>
+                    <H4>Church Information:<H4>
+
+                    <TABLE>
+                      <TR>
+                        <TD>Church name:</TD>
+                        <TD><INPUT TYPE=TEXT NAME="ChurchName" SIZE=50></TD>
+                      </TR>
+                      <TR>
+                        <TD>Denomination:</TD>
+                        <TD><INPUT TYPE=TEXT NAME="Denomination" SIZE=15></TD>
+                      </TR>
+                      <TR>
+                        <TD>Mailing address:</TD>
+                        <TD><INPUT TYPE=TEXT NAME="Address" SIZE=50></TD>
+                      </TR>
+                      <TR>
+                        <TD>City:</TD>
+                        <TD><INPUT TYPE=TEXT NAME="City" SIZE=20></TD>
+                      </TR>
+                      <TR>
+                        <TD>Province</TD>
+                        <TD>
+                          <SELECT NAME="Province">
+                            <OPTION SELECTED>Alberta
+                            <OPTION>British Columbia
+                            <OPTION>Manitoba
+                            <OPTION>New Brunswick
+                            <OPTION>Newfoundland &amp; Labrador
+                            <OPTION>Northwest Territories
+                            <OPTION>Nova Scotia
+                            <OPTION>Nunavut
+                            <OPTION>Ontario
+                            <OPTION>Prince Edward Island
+                            <OPTION>Quebec
+                            <OPTION>Saskatchewan
+                            <OPTION>Yukon Territories
+                          </SELECT>
+                        </TD>
+                      </TR>
+                      <TR>
+                        <TD>Postal code:</TD>
+                        <TD><INPUT TYPE=TEXT NAME="PostalCode" SIZE=7 MAXLENGTH=7 onChange="validatePostalCode(this)"></TD>
+                      </TR>
+                      <TR>
+                        <TD>Phone No.:</TD>
+                        <TD><INPUT TYPE=TEXT NAME="Phone" SIZE=14 MAXLENGTH=14 onChange="validatePhone(this)"></TD>
+                      </TR>
+                      <TR>
+                        <TD>Fax No.:</TD>
+                        <TD><INPUT TYPE=TEXT NAME="Fax" SIZE=14 MAXLENGTH=14 onChange="validatePhone(this)"></TD>
+                      </TR>
+                      <TR>
+                        <TD>e-mail address:</TD>
+                        <TD><INPUT TYPE=TEXT NAME="ChurchEmail" SIZE=40 onChange="validateEmail(this)"></TD>
+                      </TR>
+                      <TR>
+                        <TD>Website address:</TD>
+                        <TD>http://<INPUT TYPE=TEXT NAME="ChurchWebsite" SIZE=40 onChange="validateWebsite(this)"></TD>
+                      </TR>
+                    </TABLE>
+                  </TD>
+                </TR>
+                <TR>
+                  <TD>
+                    <H4>Primary Contact at your Church for TRAIN:<H4>
+
+                    <TABLE>
+                      <TR>                                                                              
+                        <TD>Contact person's name:</TD>                                                 
+                        <TD><INPUT TYPE=TEXT NAME="realname" SIZE=40></TD>                           
+                      </TR>                                                                             
+                      <TR>                                                                              
+                        <TD>Position:</TD>                                             
+                        <TD><INPUT TYPE=TEXT NAME="ContactPosition" SIZE=15></TD>                       
+                      </TR>                                                                             
+                      <TR>                                                                              
+                        <TD>e-mail address:</TD>                                       
+                        <TD><INPUT TYPE=TEXT NAME="email" SIZE=40 onChange="validateEmail(this)"></TD>
+                      </TR>                                                                             
+                    </TABLE>
+                  </TD>
+                </TR>
+                <TR>
+                  <TD>
+                    <TABLE>
+                      <TR>                                                                              
+                        <TD>No. of <B>brochures</B> requested:</TD>
+                        <TD><INPUT TYPE=TEXT NAME="NumBrochuresRequested" SIZE=5 onChange="validateNumber(this);"></TD>
+                      </TR>                                                                             
+                      <TR>                                                                              
+                        <TD>No. of <B>posters</B> requested:</TD>                                            
+                        <TD><INPUT TYPE=TEXT NAME="NumPostersRequested" SIZE=5 onChange="validateNumber(this);"></TD>                  
+                      </TR>                                                                             
+                    </TABLE>
+                  </TD>
+                </TR>
+              </TABLE>
+
+              <P ALIGN=CENTER>
+                <INPUT TYPE=SUBMIT VALUE="Submit this form" onClick="return isRqBrochuresValid(this.form)">
+                <INPUT TYPE=RESET VALUE="Start over">
+              </P>
+            </FORM>
+          </TD>
+        </TR>
+      </TABLE>
+
+      <P><HR></P>
+
+      <A NAME="registration">
+      <H2>Registration Form</H2>
+
+      <TABLE>
+        <TR>
+          <TD VALIGN=TOP><H3>Paper&nbsp;Form:</H3></TD>
+          <TD VALIGN=TOP>
+            <A HREF="registrationform.pdf">Click here</A> to get the paper
+            form.
+          </TD>
+        </TR>
+        <TR>
+          <TD VALIGN=TOP><H3>Electronic&nbsp;Form:</H3></TD>
+          <TD VALIGN=TOP>
+            Electronic registration is not possible at this time, nor is it
+            planned for the near future.
+          </TD>
+        </TR>
+      </TABLE>
+    </TD>
+  </TR>
+</TABLE>
+
+</BODY>
+
+</HTML>

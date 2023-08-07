@@ -1,0 +1,5 @@
+DirectoryIndex home.html
+ErrorDocument 403 /403.html
+ErrorDocument 404 /404.html
+SetEnvIf Request_URI "\.pdf$" requested_pdf=pdf
+Header add Content-Disposition "Attachment" env=requested_pdf

@@ -1,0 +1,114 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+
+<HTML>
+
+<HEAD>
+  <LINK REL="shortcut icon" HREF="../train.ico">
+
+  <TITLE>TRAIN 2005 Conference -- Website Link Request</TITLE>
+
+  <META HTTP-EQUIV="Content-Type"        CONTENT="text/html;charset=iso-8859-1">
+  <META HTTP-EQUIV="Content-Script-Type" CONTENT="text/javascript">
+
+  <LINK REL="stylesheet" HREF="../common.css" TYPE="text/css">
+
+  <!--[IF IE 6]>
+    <LINK REL="stylesheet" HREF="../hacksIE.css" TYPE="text/css">
+  <![ENDIF]-->
+
+  <SCRIPT TYPE="text/javascript" SRC="forms.js"></SCRIPT>
+  <SCRIPT TYPE="text/javascript">
+    <!--
+
+    function isFormValid(form)
+    {
+      var submit = true;
+
+      if (
+        (form.realname.value == "") ||
+        (form.email.value    == ""))
+      {
+        alert("Please provide both your name and e-mail address.");
+        submit = false;
+      }
+
+      if (
+        (form.churchName.value == "") ||
+        (form.website.value    == ""))
+      {
+        alert("Please provide both the church/organization's name and website address.");
+        submit = false;
+      }
+
+      return submit;
+    }
+
+    //-->
+  </SCRIPT>
+</HEAD>
+
+<BODY STYLE="background-image:none;">
+
+<H1>Website Link Request</H1>
+
+<HR>
+
+<!--FORM STYLE="text-align:center;" NAME="linkRequest" METHOD=POST ACTION="/cgi-bin/formmail"-->
+<FORM STYLE="text-align:center;" NAME="linkRequest" METHOD=POST ACTION="formReceived.html">
+  <DIV STYLE="display:none;">
+    <INPUT TYPE=HIDDEN NAME="subject"                 VALUE="TRAIN Website Link Request">
+    <INPUT TYPE=HIDDEN NAME="redirect"                VALUE="/forms/formReceived.html">
+    <INPUT TYPE=HIDDEN NAME="required"                VALUE="realname,email,ChurchName,Website">
+    <INPUT TYPE=HIDDEN NAME="sort"                    VALUE="order:ChurchName,Website,FirstTime">
+    <INPUT TYPE=HIDDEN NAME="recipient"               VALUE="webmaster@trainconference.com">
+    <INPUT TYPE=HIDDEN NAME="print_blank_fields"      VALUE="1">
+    <INPUT TYPE=HIDDEN NAME="missing_fields_redirect" VALUE="/forms/formInvalid.html">
+  </DIV>
+
+  <TABLE>
+    <TR>
+      <TD>Your name:</TD>
+      <TD CLASS="Required">*</TD>
+      <TD COLSPAN=2><INPUT TYPE=TEXT NAME="realname" SIZE=40></TD>
+    </TR>
+    <TR>
+      <TD>Your e-mail address:</TD>
+      <TD CLASS="Required">*</TD>
+      <TD COLSPAN=2><INPUT TYPE=TEXT NAME="email" SIZE=40 ONCHANGE="validateEmail(this)"></TD>
+    </TR>
+    <TR>
+      <TD>The church or organization's name:</TD>
+      <TD CLASS="Required">*</TD>
+      <TD COLSPAN=2><INPUT TYPE=TEXT NAME="ChurchName" SIZE=40></TD>
+    </TR>
+    <TR>
+      <TD>The church or organization's website address:</TD>
+      <TD CLASS="Required">*</TD>
+      <TD>http://</TD>
+      <TD><INPUT TYPE=TEXT NAME="Website" SIZE=34 ONCHANGE="validateWebsite(this)">
+      </TD>
+    </TR>
+    <TR>
+      <TD>
+        Is this the first time that your church or organization will be
+        sending people to the TRAIN Conference?
+      </TD>
+      <TD></TD>
+      <TD COLSPAN=2><INPUT TYPE=CHECKBOX NAME="FirstTime" VALUE="Yes"></TD>
+    </TR>
+  </TABLE>
+
+  <P>
+    <SPAN CLASS="Required">*</SPAN> Information is required for these entries.
+  </P>
+
+  <P>
+    <INPUT TYPE=SUBMIT VALUE="Submit" ONCLICK="return isFormValid(this.form)">
+    <INPUT TYPE=RESET VALUE="Start over">
+    <INPUT TYPE=BUTTON VALUE="Cancel" ONCLICK="window.close()">
+  </P>
+</FORM>
+
+</BODY>
+
+</HTML>

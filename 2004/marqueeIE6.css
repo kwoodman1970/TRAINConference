@@ -1,0 +1,12 @@
+DIV#MarqueeViewport
+{
+  position:  absolute;
+}
+
+@media print
+{
+  DIV#MarqueeViewport
+  {
+    position:  static;
+  }
+}

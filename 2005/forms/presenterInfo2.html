@@ -1,0 +1,236 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+
+<HTML>
+
+<HEAD>
+  <LINK REL="shortcut icon" HREF="../train.ico">
+
+  <TITLE>TRAIN 2005 Conference -- Presenter Information</TITLE>
+
+  <META HTTP-EQUIV="Content-Type"        CONTENT="text/html;charset=iso-8859-1">
+  <META HTTP-EQUIV="Content-Script-Type" CONTENT="text/javascript">
+
+  <LINK REL="stylesheet" HREF="../common.css" TYPE="text/css">
+
+  <!--[IF IE 6]>
+    <LINK REL="stylesheet" HREF="../hacksIE.css" TYPE="text/css">
+  <![ENDIF]-->
+
+  <STYLE TYPE="text/css">
+    <!--
+    .Centered
+    {
+      text-align:  center;
+      vertical-align:  middle;
+    }
+    //-->
+  </STYLE>
+
+  <SCRIPT TYPE="text/javascript" SRC="../cookies.js"></SCRIPT>
+  <SCRIPT TYPE="text/javascript" SRC="/forms/forms.js"></SCRIPT>
+  <SCRIPT TYPE="text/javascript">
+    <!--
+
+    var submittedResources = null;
+
+    function writeSubmittedResources()
+    {
+      submittedResources = getCookies("submittedResources");
+
+      if (submittedResources.length > 0)
+      {
+        var resourceFinder = /([^\&]*)\&([^\&]*)\&([^\&]*)\&([^\&]*)\&([^\&]*)\&?/g;
+        var resource       = resourceFinder.exec(submittedResources[0]);
+
+        while (resource != null)
+        {
+          document.writeln("<\/TD><\/TR>");
+
+          document.writeln("<TR>");
+          document.writeln("<TD>ISBN:<\/TD>");
+          document.writeln("<TD CLASS=\"Required\">&nbsp;<\/TD>");
+          document.writeln("<TD>" + unescape(resource[1]) + "<\/TD>");
+          document.writeln("<\/TR>");
+
+          document.writeln("<TR>");
+          document.writeln("<TD>Title:<\/TD>");
+          document.writeln("<TD CLASS=\"Required\">&nbsp;<\/TD>");
+          document.writeln("<TD>" + unescape(resource[2]) + "<\/TD>");
+          document.writeln("<\/TR>");
+
+          document.writeln("<TR>");
+          document.writeln("<TD>Author:<\/TD>");
+          document.writeln("<TD CLASS=\"Required\">&nbsp;<\/TD>");
+          document.writeln("<TD>" + unescape(resource[3]) + "<\/TD>");
+          document.writeln("<\/TR>");
+
+          document.writeln("<TR>");
+          document.writeln("<TD>Publisher:<\/TD>");
+          document.writeln("<TD CLASS=\"Required\">&nbsp;<\/TD>");
+          document.writeln("<TD>" + unescape(resource[4]) + "<\/TD>");
+          document.writeln("<\/TR>");
+
+          document.writeln("<TR>");
+          document.writeln("<TD>Copyright:<\/TD>");
+          document.writeln("<TD CLASS=\"Required\">&nbsp;<\/TD>");
+          document.writeln("<TD>" + unescape(resource[5]) + "<\/TD>");
+          document.writeln("<\/TR>");
+
+          document.writeln("<TR COLSPAN=3><TD>&nbsp;");
+
+          resource = resourceFinder.exec(submittedResources[0]);
+        }
+      }
+
+      return;
+    }
+
+    function setDefaultFieldValues()
+    {
+      var values = getCookies("realname");
+
+      if (values.length > 0)
+        document.forms[0].realname.value = values[0];
+
+      var values = getCookies("email");
+
+      if (values.length > 0)
+        document.forms[0].email.value = values[0];
+
+      return;
+    }
+
+    function isFormValid(form)
+    {
+      var submit = true;
+
+      if ((form.realname.value == "") || (form.email.value == ""))
+      {
+        window.alert("Please provide both your name and e-mail address.");
+        submit = false;
+      }
+
+      if ((form.Resource_ISBN.value == "") && (form.Resource_Title.value == ""))
+      {
+        window.alert("At the very least, we need either the ISBN or the title of the " +
+          "resource that you're requesting.");
+        submit = false;
+      }
+
+      if (submit)
+      {
+        var allResources = ((submittedResources.length > 0) ? submittedResources[0] + "&" : "");
+
+        allResources += escape(form.Resource_ISBN.value) + "&" +
+          escape(form.Resource_Title.value) + "&" + escape(form.Resource_Author.value) + "&" +
+          escape(form.Resource_Publisher.value) + "&" + escape(form.Resource_Copyright.value);
+
+        setCookie("realname", form.realname.value, "trainconference.com", "/cgi-bin");
+        setCookie("email", form.email.value, "trainconference.com", "/cgi-bin");
+        setCookie("submittedResources", allResources, "trainconference.com", "/cgi-bin");
+      }
+
+      return submit;
+    }
+
+    //-->
+  </SCRIPT>
+</HEAD>
+
+<BODY STYLE="background-image:none" ONLOAD="setDefaultFieldValues();">
+
+<H1>Form Received!</H1>
+
+<HR>
+
+<P>
+  Thank you for filling out one of our on-line forms!  Your information has
+  been received and passed on to the appropriate TRAIN 2005 Conference
+  committee member.
+</P>
+
+<P>
+  If you would like to request additional resource items to be brought into the
+  Resource Centre then please fill in the following form.
+</P>
+
+<HR>
+
+<FORM STYLE="text-align:center;" NAME="equipmentRequest" METHOD=POST ACTION="/cgi-bin/formmail">
+  <DIV STYLE="display:none;">
+    <INPUT TYPE=HIDDEN NAME="subject"                 VALUE="TRAIN Equipment Request">
+    <INPUT TYPE=HIDDEN NAME="redirect"                VALUE="/forms/presenterInfo2.html">
+    <INPUT TYPE=HIDDEN NAME="required"                VALUE="realname,email">
+    <INPUT TYPE=HIDDEN NAME="sort"                    VALUE="order:Wants_Lunch,Session_A_Title,Session_B_Title,Session_C_Title,Session_D_Title,Overhead_Session_A,Overhead_Session_B,Overhead_Session_C,Overhead_Session_D,Screen_Session_A,Screen_Session_B,Screen_Session_C,Screen_Session_D,Extension_Cord_Session_A,Extension_Cord_Session_B,Extension_Cord_Session_C,Extension_Cord_Session_D,Whiteboard_Session_A,Whiteboard_Session_B,Whiteboard_Session_C,Whiteboard_Session_D,Sm_Tables_Session_A,Sm_Tables_Session_B,Sm_Tables_Session_C,Sm_Tables_Session_D,Lg_Tables_Session_A,Lg_Tables_Session_B,Lg_Tables_Session_C,Lg_Tables_Session_D,CD_Player_Session_A,CD_Player_Session_B,CD_Player_Session_C,CD_Player_Session_D,Podium_Session_A,Podium_Session_B,Podium_Session_C,Podium_Session_D,Other_Session_A,Other_Session_B,Other_Session_C,Other_Session_D,Room_Arrangement,Publishable_Email,Publishable_Phone,Resource_ISBN,Resource_Title,Resource_Author,Resource_Publisher,Resource_Copyright">
+    <INPUT TYPE=HIDDEN NAME="recipient"               VALUE="presenters@trainconference.com">
+    <INPUT TYPE=HIDDEN NAME="print_blank_fields"      VALUE="0">
+    <INPUT TYPE=HIDDEN NAME="missing_fields_redirect" VALUE="/forms/formInvalid.html">
+  </DIV>
+
+  <TABLE>
+    <TR>
+      <TD>Your name:</TD>
+      <TD CLASS="Required">*</TD>
+      <TD><INPUT TYPE=TEXT NAME="realname" SIZE=40></TD>
+    </TR>
+    <TR>
+      <TD>Your e-mail address:</TD>
+      <TD CLASS="Required">*</TD>
+      <TD><INPUT TYPE=TEXT NAME="email" SIZE=40 ONCHANGE="validateEmail(this)"></TD>
+    </TR>
+    <TR>
+      <TD COLSPAN=3>
+        &nbsp;
+
+        <SCRIPT TYPE="text/javascript">
+          <!--
+          writeSubmittedResources();
+          //-->
+        </SCRIPT>
+      </TD>
+    </TR>
+    <TR>
+      <TD>ISBN:</TD>
+      <TD CLASS="Required">&nbsp;</TD>
+      <TD>
+        <INPUT TYPE=TEXT NAME="Resource_ISBN" SIZE=13 ONCHANGE="validateISBN(this)">
+      </TD>
+    </TR>
+    <TR>
+      <TD>Title:</TD>
+      <TD CLASS="Required">&nbsp;</TD>
+      <TD><INPUT TYPE=TEXT NAME="Resource_Title" SIZE=40></TD>
+    </TR>
+    <TR>
+      <TD>Author:</TD>
+      <TD CLASS="Required">&nbsp;</TD>
+      <TD><INPUT TYPE=TEXT NAME="Resource_Author" SIZE=40></TD>
+    </TR>
+    <TR>
+      <TD>Publisher:</TD>
+      <TD CLASS="Required">&nbsp;</TD>
+      <TD><INPUT TYPE=TEXT NAME="Resource_Publisher" SIZE=40></TD>
+    </TR>
+    <TR>
+      <TD>Copyright:</TD>
+      <TD CLASS="Required">&nbsp;</TD>
+      <TD>
+        <INPUT TYPE=TEXT NAME="Resource_Copyright" SIZE=4 ONCHANGE="validateNumber(this)">
+      </TD>
+    </TR>
+  </TABLE>
+
+  <P>
+    <SPAN CLASS="Required">*</SPAN> Information is required for these entries.
+  </P>
+
+  <P>
+    <INPUT TYPE=SUBMIT VALUE="Submit" ONCLICK="return isFormValid(this.form)">
+    <INPUT TYPE=RESET VALUE="Start over">
+    <INPUT TYPE=BUTTON VALUE="Close" ONCLICK="window.close()">
+  </P>
+</FORM>
+
+</BODY>
+
+</HTML>

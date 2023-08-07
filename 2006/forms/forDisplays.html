@@ -1,0 +1,325 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+
+<HTML>
+
+<HEAD>
+  <TITLE>TRAIN 2006 Conference -- Display &amp; Advertising Request</TITLE>
+
+  <META HTTP-EQUIV="Content-Type"        CONTENT="text/html;charset=iso-8859-1">
+  <META HTTP-EQUIV="Content-Script-Type" CONTENT="text/javascript">
+
+  <LINK REL="shortcut icon" HREF="../train.ico">
+  <LINK REL="stylesheet"    HREF="../common.css" TYPE="text/css">
+
+  <!--[if lt IE 7]>
+    <LINK REL="stylesheet" HREF="../hacksIE.css" TYPE="text/css">
+  <![endif]-->
+
+  <STYLE TYPE="text/css">
+    <!--
+    TD > TABLE
+    {
+      margin:  0px;
+      border:  0px;
+      padding:  0px;
+    }
+    -->
+  </STYLE>
+
+  <SCRIPT TYPE="text/javascript" SRC="forms.js"></SCRIPT>
+  <SCRIPT TYPE="text/javascript">
+    <!--
+
+    function updateEstimate()
+    {
+      var estimate  = 0;
+      var numTables = parseInt(document.getElementsByName("NumTables")[0].value);
+
+      if (!isNaN(numTables))
+        estimate += numTables * 80;
+
+      var bookletAds = document.getElementsByName("BookletAd");
+
+      for (var i = 0; i < bookletAds.length; ++i)
+      {
+        if (bookletAds[i].checked)
+        {
+          if (bookletAds[i].value == "Full page")
+            estimate += 240;
+          else if (bookletAds[i].value == "Half page")
+            estimate += 125;
+          if (bookletAds[i].value == "Quarter page")
+            estimate += 65;
+          if (bookletAds[i].value == "Eighth page")
+            estimate += 35;
+        }
+      }
+
+      document.getElementsByName("EstimatedFee")[0].value = "$" + estimate + ".00";
+      return;
+    }
+
+    function isFormValid(form)
+    {
+      var submit = true;
+
+      if ((form.elements["realname"].value == "") || (form.elements["email"].value == ""))
+      {
+        window.alert("Please provide your name & e-mail address and the name of your " +
+          "organization.");
+        submit = false;
+      }
+
+      if ((form.elements["Address"].value == "") || (form.elements["City"].value == "") ||
+        (form.elements["PostalCode"].value == "") || (form.elements["Phone"].value == ""))
+      {
+        window.alert("Please provide your complete mailing address and phone number.");
+        submit = false;
+      }
+
+      return submit;
+    }
+
+    //-->
+  </SCRIPT>
+</HEAD>
+
+<BODY STYLE="background-image:none">
+
+<H1>Displays &amp; Advertising Request</H1>
+
+<HR>
+
+<!--FORM STYLE="text-align:center;" ID="application" METHOD=POST ACTION="/cgi-bin/formmail"-->
+<FORM STYLE="text-align:center;" ID="application" METHOD=POST ACTION="formReceived.html">
+  <INPUT TYPE=HIDDEN NAME="subject"                 VALUE="TRAIN Display &amp; Advertising Application">
+  <INPUT TYPE=HIDDEN NAME="redirect"                VALUE="/forms/formReceived.html">
+  <INPUT TYPE=HIDDEN NAME="required"                VALUE="realname,email">
+  <INPUT TYPE=HIDDEN NAME="sort"                    VALUE="order:">
+  <INPUT TYPE=HIDDEN NAME="recipient"               VALUE="webmaster@trainconference.com">
+  <INPUT TYPE=HIDDEN NAME="print_blank_fields"      VALUE="0">
+  <INPUT TYPE=HIDDEN NAME="missing_fields_redirect" VALUE="/forms/formInvalid.html">
+
+  <TABLE>
+    <TR><TH COLSPAN=3>Contact Information</TH></TR>
+    <TR>
+      <TD STYLE="width:48%;">Name:</TD>
+      <TD CLASS="Required" STYLE="width:2%;">*</TD>
+      <TD STYLE="width:48%;"><INPUT TYPE=TEXT NAME="realname" SIZE=40></TD>
+    </TR>
+    <TR>
+      <TD>e-Mail address:</TD>
+      <TD CLASS="Required">*</TD>
+      <TD><INPUT TYPE=TEXT NAME="email" SIZE=40 ONCHANGE="validateEmail(this)"></TD>
+    </TR>
+    <TR>
+      <TD>Organization's name:</TD>
+      <TD CLASS="Required">*</TD>
+      <TD><INPUT TYPE=TEXT NAME="Name" SIZE=40></TD>
+    </TR>
+    <TR>
+      <TD>Address:</TD>
+      <TD CLASS="Required">*</TD>
+      <TD><INPUT TYPE=TEXT NAME="Address" SIZE=40></TD>
+    </TR>
+    <TR>
+      <TD>City:</TD>
+      <TD CLASS="Required">*</TD>
+      <TD><INPUT TYPE=TEXT NAME="City" SIZE=20></TD>
+    </TR>
+    <TR>
+      <TD>Province:</TD>
+      <TD CLASS="Required">*</TD>
+      <TD>
+        <SELECT NAME="Province">
+          <OPTION SELECTED>AB</OPTION>
+          <OPTION>BC</OPTION>
+          <OPTION>MB</OPTION>
+          <OPTION>NB</OPTION>
+          <OPTION>NL</OPTION>
+          <OPTION>NS</OPTION>
+          <OPTION>NU</OPTION>
+          <OPTION>NWT</OPTION>
+          <OPTION>ON</OPTION>
+          <OPTION>PEI</OPTION>
+          <OPTION>QC</OPTION>
+          <OPTION>SK</OPTION>
+          <OPTION>YK</OPTION>
+        </SELECT>
+      </TD>
+    </TR>
+    <TR>
+      <TD>Postal code:</TD>
+      <TD CLASS="Required">*</TD>
+      <TD COLSPAN=2>
+        <INPUT TYPE=TEXT NAME="PostalCode" SIZE=7 ONCHANGE="validatePostalCode(this)">
+      </TD>
+    </TR>
+    <TR>
+      <TD>Phone number (with area code):</TD>
+      <TD CLASS="Required">*</TD>
+      <TD><INPUT TYPE=TEXT NAME="Phone" SIZE=15 ONCHANGE="validatePhone(this)"></TD>
+    </TR>
+    <TR>
+      <TD>Fax number (with area code):</TD>
+      <TD></TD>
+      <TD><INPUT TYPE=TEXT NAME="Fax" SIZE=15 ONCHANGE="validatePhone(this)"></TD>
+    </TR>
+    <TR><TH COLSPAN=3><HR>Ministry Mall Trade Show</TH></TR>
+    <TR>
+      <TD>Number of tables requested ($80.00 each):</TD>
+      <TD></TD>
+      <TD><INPUT TYPE=TEXT NAME="NumTables" SIZE=3 STYLE="text-align:right;" VALUE="0" ONCHANGE="validateInt(this, 0); updateEstimate();"></TD>
+    </TR>
+    <TR>
+      <TD>Additional requests:</TD>
+      <TD></TD>
+      <TD>
+        <LABEL STYLE="display:block;padding-left:25px;text-indent:-25px;">
+          <INPUT TYPE=CHECKBOX NAME="RequestPowerOutlet" VALUE="No"> Power
+          outlet
+        </LABEL>
+        <LABEL STYLE="display:block;padding-left:25px;text-indent:-25px;">
+          <INPUT TYPE=CHECKBOX NAME="RequestRoomForFreeStandingDisplay" VALUE="No">
+          Room for a free-standing display (do not need a table)
+        </LABEL>
+
+        <!--DIV STYLE="padding-left:20px;text-indent:-20px;">
+        <INPUT TYPE=CHECKBOX ID="RequestPowerOutlet" NAME="RequestPowerOutlet" VALUE="No">
+        <LABEL FOR="RequestPowerOutlet">Power outlet</LABEL><BR>
+        <INPUT TYPE=CHECKBOX ID="RequestRoomForFreeStandingDisplay" NAME="RequestRoomForFreeStandingDisplay" VALUE="No">
+        <LABEL FOR="RequestRoomForFreeStandingDisplay">Room for a free-standing display (do not
+        need a table)</LABEL><BR>
+        </DIV-->
+
+        <!--TABLE>
+          <TR>
+            <TD CLASS="Centered">
+              <INPUT TYPE=CHECKBOX NAME="RequestPowerOutlet" VALUE="No">
+            </TD>
+            <TD>Power outlet</TD>
+          </TR>
+          <TR>
+            <TD CLASS="Centered">
+              <INPUT TYPE=CHECKBOX NAME="RequestRoomForFreeStandingDisplay" VALUE="No">
+            </TD>
+            <TD>Room for a free-standing display (do not need a table)</TD>
+          </TR>
+        </TABLE-->
+        Other:<BR>
+        <TEXTAREA NAME="RequestOther" ROWS=5 COLS=30></TEXTAREA><BR>
+      </TD>
+    </TR>
+    <TR><TH COLSPAN=3><HR>Website Link</TH></TR>
+    <TR>
+      <TD>Would you like a link from the TRAIN website to your website?</TD>
+      <TD></TD>
+      <TD>
+        <LABEL STYLE="display:block;padding-left:25px;text-indent:-25px;">
+          <INPUT TYPE=RADIO NAME="WebsiteLink" VALUE="Yes" ONCLICK="enableElements(this, 'WebsiteLinkName', 'WebsiteLinkURL', 'WebsiteLinkDescription')">
+          Yes
+        </LABEL>
+        <LABEL STYLE="display:block;padding-left:25px;text-indent:-25px;">
+          <INPUT TYPE=RADIO NAME="WebsiteLink" VALUE="No" CHECKED ONCLICK="disableElements(this, 'WebsiteLinkName', 'WebsiteLinkURL', 'WebsiteLinkDescription')">
+          No
+        </LABEL>
+        <!--TABLE>
+          <TR>
+            <TD><INPUT TYPE=RADIO NAME="WebsiteLink" VALUE="Yes" ONCLICK="enableElements(this, 'WebsiteLinkName', 'WebsiteLinkURL', 'WebsiteLinkDescription')"></TD>
+            <TD>Yes</TD>
+          </TR>
+          <TR>
+            <TD><INPUT TYPE=RADIO NAME="WebsiteLink" VALUE="No" CHECKED ONCLICK="disableElements(this, 'WebsiteLinkName', 'WebsiteLinkURL', 'WebsiteLinkDescription')"></TD>
+            <TD>No</TD>
+          </TR>
+        </TABLE-->
+      </TD>
+    </TR>
+    <TR>
+      <TD>Organization name (if different from above):</TD>
+      <TD></TD>
+      <TD><INPUT TYPE=TEXT NAME="WebsiteLinkName" SIZE=40 DISABLED></TD>
+    </TR>
+    <TR>
+      <TD>Website's adddress:</TD>
+      <TD></TD>
+      <TD CLASS="NoWrap">
+        http:// </TT><INPUT TYPE=TEXT NAME="WebsiteLinkURL" SIZE=34 ONCHANGE="validateWebsite(this)" DISABLED>
+      </TD>
+    </TR>
+    <TR>
+      <TD>25-word description:</TD>
+      <TD></TD>
+      <TD><TEXTAREA NAME="WebsiteLinkDescription" ROWS=5 COLS=30 DISABLED></TEXTAREA></TD>
+    </TR>
+    <TR>
+      <TD COLSPAN=3>
+        Please e-mail
+        <A HREF="mailto:rdtalbot@shaw.ca,webmaster@trainconference.com?subject=Logo%20for%20TRAIN%20Conference%20Website%20Link">rdtalbot@shaw.ca
+        and webmaster@trainconference.com</A> with your logo (in any image
+        file format) attached.
+      </TD>
+    </TR>
+    <TR><TH COLSPAN=3><HR>Conference Booklet</TH></TR>
+    <TR>
+      <TD>Advertisement:</TD>
+      <TD></TD>
+      <TD>
+        <INPUT TYPE=RADIO ID="BookletAd1" NAME="BookletAd" VALUE="None" ONCLICK="updateEstimate()" CHECKED>
+        <LABEL FOR=BookletAd1>None</LABEL><BR>
+        <INPUT TYPE=RADIO ID="BookletAd2" NAME="BookletAd" VALUE="Full page" ONCLICK="updateEstimate()">
+        <LABEL FOR=BookletAd2>Full page ($240.00)</LABEL><BR>
+        <INPUT TYPE=RADIO ID="BookletAd3" NAME="BookletAd" VALUE="Half page" ONCLICK="updateEstimate()">
+        <LABEL FOR=BookletAd3>Half page ($125.00)</LABEL><BR>
+        <INPUT TYPE=RADIO ID="BookletAd4" NAME="BookletAd" VALUE="Quarter page" ONCLICK="updateEstimate()">
+        <LABEL FOR=BookletAd4>Quarter page ($65.00)</LABEL><BR>
+        <INPUT TYPE=RADIO ID="BookletAd5" NAME="BookletAd" VALUE="Eighth page" ONCLICK="updateEstimate()">
+        <LABEL FOR=BookletAd5>Eighth page ($35.00)</LABEL><BR>
+        <!--TABLE>
+          <TR>
+            <TD><INPUT TYPE=RADIO NAME="BookletAd" VALUE="None" ONCLICK="updateEstimate()" CHECKED></TD>
+            <TD>None</TD>
+          </TR>
+          <TR>
+            <TD><INPUT TYPE=RADIO NAME="BookletAd" VALUE="Full page" ONCLICK="updateEstimate()"></TD>
+            <TD>Full page ($240.00)</TD>
+          </TR>
+          <TR>
+            <TD><INPUT TYPE=RADIO NAME="BookletAd" VALUE="Half page" ONCLICK="updateEstimate()"></TD>
+            <TD>Half page ($125.00)</TD>
+          </TR>
+          <TR>
+            <TD><INPUT TYPE=RADIO NAME="BookletAd" VALUE="Quarter page" ONCLICK="updateEstimate()"></TD>
+            <TD>Quarter page ($65.00)</TD>
+          </TR>
+          <TR>
+            <TD><INPUT TYPE=RADIO NAME="BookletAd" VALUE="Eighth page" ONCLICK="updateEstimate()"></TD>
+            <TD>Eighth page ($35.00)</TD>
+          </TR>
+        </TABLE-->
+      </TD>
+    </TR>
+    <TR><TD COLSPAN=3><HR></TD></TR>
+    <TR>
+      <TD>Estimated fee:</TD>
+      <TD></TD>
+      <TD STYLE="text-align:right">
+        <INPUT TYPE=TEXT NAME="EstimatedFee" SIZE=10 STYLE="text-align:right;" VALUE="$0.00" READONLY>
+      </TD>
+    </TR>
+  <TABLE>
+
+  <P>
+    <SPAN CLASS="Required">*</SPAN> Information is required for these entries.
+  </P>
+
+  <P>
+    <INPUT TYPE=SUBMIT VALUE="Submit" ONCLICK="return isFormValid(this.form)">
+    <INPUT TYPE=RESET  VALUE="Start over">
+    <INPUT TYPE=BUTTON VALUE="Cancel" ONCLICK="window.close()">
+  </P>
+</FORM>
+
+</BODY>
+
+</HTML>

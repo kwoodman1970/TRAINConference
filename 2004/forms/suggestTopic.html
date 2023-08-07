@@ -1,0 +1,102 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+
+<HTML>
+
+<HEAD>
+  <LINK REL="shortcut icon" HREF="../train.ico">
+
+  <TITLE>TRAIN 2004 Conference -- NetConnect -- Suggest a Discussion Topic</TITLE>
+
+  <META HTTP-EQUIV="Content-Type"        CONTENT="text/html;charset=iso-8859-1">
+  <META HTTP-EQUIV="Content-Script-Type" CONTENT="text/javascript">
+
+  <LINK REL="stylesheet" HREF="../common.css" TYPE="text/css">
+  <LINK REL="stylesheet" HREF="forms.css" TYPE="text/css">
+
+  <!--[IF IE 6]>
+    <LINK REL="stylesheet" HREF="../ie6hacks.css" TYPE="text/css">
+  <![ENDIF]-->
+
+  <SCRIPT TYPE="text/javascript" SRC="forms.js"></SCRIPT>
+  <SCRIPT TYPE="text/javascript">
+    <!--
+
+    function isFormValid(form)
+    {
+      var submit = true;
+
+      if (
+        (form.realname.value == "") ||
+        (form.email.value    == ""))
+      {
+        alert("Please provide both your name and e-mail address.");
+        submit = false;
+      }
+
+      if (form.topic.value == "")
+      {
+        alert("You didn't suggest any discussion topics!");
+        submit = false;
+      }
+
+      return submit;
+    }
+
+    //-->
+  </SCRIPT>
+</HEAD>
+
+<BODY>
+
+<H1>
+  NetConnect &#8211; Suggest a Discussion Topic
+</H1>
+
+<HR STYLE="clear:both;">
+
+<!--FORM STYLE="text-align:center;" NAME="suggestTopic" METHOD=POST ACTION="/cgi-bin/formmail"-->
+<FORM STYLE="text-align:center;" NAME="suggestTopic" METHOD=POST ACTION="formReceived.html">
+  <DIV STYLE="display:none;">
+    <INPUT TYPE=HIDDEN NAME="subject"                 VALUE="TRAIN NetConnect Topic Suggestion">
+    <INPUT TYPE=HIDDEN NAME="redirect"                VALUE="/forms/formReceived.html">
+    <INPUT TYPE=HIDDEN NAME="required"                VALUE="realname,email,topic">
+    <INPUT TYPE=HIDDEN NAME="sort"                    VALUE="order:topic">
+    <INPUT TYPE=HIDDEN NAME="recipient"               VALUE="netconnect@trainconference.com">
+    <INPUT TYPE=HIDDEN NAME="print_blank_fields"      VALUE="1">
+    <INPUT TYPE=HIDDEN NAME="missing_fields_redirect" VALUE="/forms/formInvalid.html">
+  </DIV>
+
+  <TABLE STYLE="width:99%;">
+    <TR>
+      <TD>Your name:</TD>
+      <TD CLASS="Required">*</TD>
+      <TD><INPUT TYPE=TEXT NAME="realname" SIZE=40></TD>
+    </TR>
+    <TR>
+      <TD>Your e-mail address:</TD>
+      <TD CLASS="Required">*</TD>
+      <TD><INPUT TYPE=TEXT NAME="email" SIZE=40 ONCHANGE="validateEmail(this)"></TD>
+    </TR>
+    <TR>
+      <TD>Your suggested topic:</TD>
+      <TD CLASS="Required">*</TD>
+      <TD>
+        <TEXTAREA NAME="topic" ROWS=5 COLS=40></TEXTAREA>
+      </TD>
+    </TR>
+  </TABLE>
+
+  <P>
+    <SPAN CLASS="Required">*</SPAN> Information is required for these entries.
+  </P>
+
+  <P>
+    <INPUT TYPE=SUBMIT VALUE="Submit" onClick="return isFormValid(this.form)">
+    <INPUT TYPE=RESET VALUE="Start over">
+    <INPUT TYPE=BUTTON VALUE="Cancel" onClick="window.close()">
+  </P>
+</FORM>
+
+</BODY>
+
+</HTML>

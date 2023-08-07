@@ -1,0 +1,116 @@
+<?xml version="1.0"?>
+
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+
+<channel>
+<atom:link href="http://www.trainconference.com/rss.xml" rel="self" type="application/rss+xml" />
+
+<title>TRAIN Conference</title>
+<link>http://www.trainconference.com/</link>
+<description>
+  TRAIN Conference (Calgary, Alberta, Canada) offers seminars and resources to
+  equip and encourage Christian leaders, workers and volunteers in their
+  ministry areas.
+</description>
+<category>Christian conferences</category>
+<category domain="http://www.dmoz.org/">Society/Religion_and_Spirituality/Christianity/Conferences_and_Events/Recurring_Events/Canada</category>
+<category domain="http://www.google.ca/">Top/Society/Religion_and_Spirituality/Christianity/Conferences_and_Events/Recurring_Events/Canada</category>
+<image>
+  <url>http://www.trainconference.com/logoRSS.gif</url>
+  <title>TRAIN Conference</title>
+  <link>http://www.trainconference.com/</link>
+  <width>144</width>
+  <height>59</height>
+</image>
+<language>en-ca</language>
+<pubDate>Wed, 19 Sep 2007 00:00 MST</pubDate>
+
+<item>
+  <guid>http://www.trainconference.com/</guid>
+  <link>http://www.trainconference.com/</link>
+  <title>TRAIN 2007 Conference (November 3) -- "Under Construction"</title>
+  <category>Christian conferences</category>
+  <category domain="http://www.dmoz.org/">Society/Religion_and_Spirituality/Christianity/Conferences_and_Events/Recurring_Events/Canada</category>
+  <category domain="http://www.google.ca/">Top/Society/Religion_and_Spirituality/Christianity/Conferences_and_Events/Recurring_Events/Canada</category>
+  <pubDate>Wed, 19 Sep 2007 00:00 MST</pubDate>
+  <description>
+    2007 is a transitional year for the TRAIN Conference.  We have begun new
+    relationships with a number of local Bible colleges.  We don't know for
+    sure what future conferences will look like yet, but we're very excited
+    about the possibilities -- TRAIN is under construction!  But What does this
+    mean for 2007?  We're going to offer a somewhat more condensed conference
+    this year.  The focus will be on children's and youth ministries, and
+    we're also striving to bring back the Resource Centre.
+  </description>
+</item>
+
+<item>
+  <guid isPermaLink="false">http://www.trainconference.com/conference.html</guid>
+  <link>http://www.trainconference.com/conference.html</link>
+  <title>Conference Information</title>
+  <category>Christian conferences</category>
+  <category domain="http://www.dmoz.org/">Society/Religion_and_Spirituality/Christianity/Conferences_and_Events/Recurring_Events/Canada</category>
+  <category domain="http://www.google.ca/">Top/Society/Religion_and_Spirituality/Christianity/Conferences_and_Events/Recurring_Events/Canada</category>
+  <pubDate>Wed, 19 Sep 2007 00:00 MST</pubDate>
+  <description>
+    The TRAIN 2007 Conference will be held at Bethany Chapel -- 3333
+    Richardson Way SW, Calgary, AB, CANADA.  This year, choose one of five
+    tracks -- Preschool Ministry, Children's Ministry, Youth Ministry,
+    Leadership or Multi-Generational Ministry -- to attend for all three
+    sessions (see schedule).  A hot lunch will be served.
+  </description>
+</item>
+
+<item>
+  <guid isPermaLink="false">http://www.trainconference.com/registration.html</guid>
+  <link>http://www.trainconference.com/registration.html</link>
+  <title>How to Register</title>
+  <category>Christian conferences</category>
+  <category domain="http://www.dmoz.org/">Society/Religion_and_Spirituality/Christianity/Conferences_and_Events/Recurring_Events/Canada</category>
+  <category domain="http://www.google.ca/">Top/Society/Religion_and_Spirituality/Christianity/Conferences_and_Events/Recurring_Events/Canada</category>
+  <pubDate>Wed, 19 Sep 2007 00:00 MST</pubDate>
+  <description>
+    There are three ways to register for the TRAIN 2007 Conference:  online
+    (recommended), mail-in and walk-in.  The registration fees are described in
+    detail, and all include a hot lunch.  A list of hotels with the easiest
+    access to the conference location is provided for convenience.
+  </description>
+</item>
+
+<item>
+  <guid>http://www.trainconference.com/privacyPolicy.html</guid>
+  <link>http://www.trainconference.com/privacyPolicy.html</link>
+  <title>Privacy Policy</title>
+  <category>Christian conferences</category>
+  <category domain="http://www.dmoz.org/">Society/Religion_and_Spirituality/Christianity/Conferences_and_Events/Recurring_Events/Canada</category>
+  <category domain="http://www.google.ca/">Top/Society/Religion_and_Spirituality/Christianity/Conferences_and_Events/Recurring_Events/Canada</category>
+  <pubDate>Sat, 02 Sep 2006 00:00:00 MST</pubDate>
+  <description>
+    Our privacy policy states what information we collect and what we do with
+    it.  We DON'T share any personal information with any third parties.  Also,
+    individuals, churches and organizations are reminded that they may opt-in
+    or opt-out of our mailing list at any time.
+  </description>
+</item>
+
+<item>
+  <guid>http://www.trainconference.com/whoWeAre.html</guid>
+  <link>http://www.trainconference.com/whoWeAre.html</link>
+  <title>Who We Are</title>
+  <category>Christian conferences</category>
+  <category domain="http://www.dmoz.org/">Society/Religion_and_Spirituality/Christianity/Conferences_and_Events/Recurring_Events/Canada</category>
+  <category domain="http://www.google.ca/">Top/Society/Religion_and_Spirituality/Christianity/Conferences_and_Events/Recurring_Events/Canada</category>
+  <pubDate>Wed, 19 Sep 2007 00:00 MST</pubDate>
+  <description>
+    The first TRAIN Conference was held in 1983.  Every year since, as the
+    baton is passed on to new committe members, we hope that we will be able to
+    encourage, train, provide purpose-filled resources and develop Christian
+    workers and leaders.  Contact us if you have any questions or comments, or
+    if you are interested in volunteering with us in the future.  We are
+    pleased to be partnering with a number of Bible colleges.
+  </description>
+</item>
+
+</channel>
+
+</rss>

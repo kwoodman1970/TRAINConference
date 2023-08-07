@@ -1,0 +1,234 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US">
+<head>
+<title>jessey.net | articles | fixed sidebars</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<!--#include virtual="/meta/index.txt"-->
+<style type="text/css">
+
+<!--
+
+body {
+    margin: 0em;
+    padding: 0em;
+    background: black none;
+    color: white;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: medium;
+}
+
+
+.invisible {
+    display: none;
+}
+
+
+#fixed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 10em;
+    height: 100%;
+    background: yellow;
+    color: black;
+}
+
+
+body > #fixed {
+    position: fixed;
+}
+
+
+#content {
+    margin-left: 10em;
+    padding: 1em;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: medium;
+    line-height: 1.5;
+}
+
+
+code, pre {
+    font-family: monospace;
+    font-size: large;
+    font-weight: bold;
+    background: transparent none;
+    color: yellow;
+}
+
+.center { text-align: center; }
+h1 { font-size: 4em; text-align: right; }
+h2 { margin-top: 2em; }
+a:link { background: transparent none; color: aqua; }
+a:visited { background: transparent none; color: aqua; }
+a:active { background: transparent none; color: aqua; }
+a:hover { background: transparent none; color: fuchsia; }
+
+
+#fixed a {
+    display: block;
+    text-decoration: none;
+    padding: 0.5em;
+    background: navy none;
+    color: white;
+    font-weight: bold;
+    font-size: smaller;
+    margin-bottom: 2px;
+}
+
+
+#fixed a:hover {
+    background: red none;
+    color: white;
+}
+
+
+div.address {
+    border-top: 2px solid black;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+
+
+div.address img {
+    border: 0px;
+    text-align: left;
+}
+
+-->
+</style>
+
+<!--[if IE 6]>
+<link rel="stylesheet" href="IE6hack.css" type="text/css" />
+<![endif]-->
+
+</head>
+<body>
+<div id="content">
+
+<h1>fixed sidebars</h1>
+
+<h2>banish evil frames for good?</h2>
+
+<p>The holy grail for many web designers is for there to be some support for the <code>position: fixed</code> style rule. Unfortunately, only the stable versions of Gecko (Mozilla 1.0, Netscape 7.0 or better) and Opera 6.0 support it properly.</p>
+
+<p>In theory, a sidebar on the left of the screen that is fixed with respect to the browser window, or <em>viewport</em> can be created with simple <acronym title="Cascading Style Sheets">CSS</acronym>. Let us consider a simple example. We want a sidebar that is positioned on the left. It is going to be 10em wide and extend from the top to the bottom of the viewport. Everything to the right of the sidebar will scroll like a normal document. The layout code is simple:</p>
+
+<pre>#fixed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 10em;
+    height: 100%;
+}
+
+
+body > #fixed {
+    position: fixed;
+}
+
+
+#content {
+    margin-left: 10em;
+}</pre>
+
+<p>Here we have our fixed sidebar, <code>div.fixed</code> and our scrolling content, <code>#content</code>. The reason the code uses <code>position: absolute</code> and then alters the <code>div</code> with <code>body > div.fixed { position: fixed; }</code> is that it is important to allow for browsers that don't support <code>position: fixed</code> at all.</p>
+
+<h2>but there's a problem</h2>
+
+<p>The most popular browser in the world is Microsoft Internet Explorer. At the time of writing, version 5.x has a 49% market share and version 6.x has a 41% market share. Both of these browsers fail to implement <code>position: fixed</code> correctly. Internet Explorer 6.0 has a special &quot;standards mode&quot; that works if the document you create has a proper <code>DOCTYPE</code> declared. If not, 6.0 reverts to &quot;quirks mode&quot;, which effectively emulates version 5.5.</p>
+
+<p>The &quot;standards mode&quot; can be forced to correctly implement <code>position: fixed</code> by using a workaround (commonly referred to as a <em>hack</em>) that uses a proprietary extension that Microsoft has engineered into Internet Explorer called <em>Conditional Comments</em>. First, an external stylesheet must be created with the following code:</p>
+
+<pre>html {
+    overflow: hidden;
+}
+
+
+body {
+    height: 100%;
+    overflow: auto;
+}</pre>
+
+<p>For this particular article, I have saved the stylesheet as <a href="IE6hack.css" title="External Stylesheet"><code>IE6hack.css</code></a>. Then I have added the following code, <strong>AFTER</strong> the <code>style</code> tag but still within the <code>head</code> of the page:</p>
+
+<pre>&lt;!--[if IE 6]&gt;
+&lt;link rel=&quot;stylesheet&quot;
+href=&quot;IE6hack.css&quot;
+type=&quot;text/css&quot; /&gt;
+&lt;![endif]--&gt;</pre>
+
+<p>Basically, if the browser encountered is Internet Explorer 6.0 (or better), the conditional comment loads the <code>IE6hack.css</code> style sheet. The effect is that Internet Explorer 6.x mimics the correct behavior of <code>position: fixed</code>. Unfortunately, nothing can be done (that I am aware of) for previous version of Internet Explorer unless some sort of scripting is used.</p>
+
+<p>This is not quite the end of the story, however. If the browser window width is resized so that it is narrower than the width of some fixed-width content, such as an image or text within a <code>pre</code> element, the scrollbar will be overlapped and disappear, making it impossible for the user to scroll down the page. A horizontal scrollbar will not appear to help out the user. I have not been able to find a satisfactory solution to this. In this document, I have been forced to ensure anything I've put in <code>pre</code> tags has not been too wide, which is why I was forced to &quot;spread out&quot; the stylesheet reference in the previous code example. Fortunately, because this is part of the hack itself, it will not be a problem for non-Internet Explorer users.</p>
+
+<h2>update!</h2>
+<p><strong>09/22/04:</strong> <a href="http://www.seweso.com/blog/" title="Seweso's blog">Wouter Schut</a> has written to me with a solution to the scrollbar problem. Simply by adding <code>width: 100%;</code> to the <code>body</code> declaration in <a href="IE6hack.css" title="External Stylesheet"><code>IE6hack.css</code></a>, the scrollbar remains in place as expected. Thank you, Wouter.</p>
+
+<h2>jazz it up a bit</h2>
+
+<p>For this page, I have jazzed-up the fixed sidebar by placing links in it that take advantage of the <code>display: block</code> property of <acronym title="Cascading Style Sheets">CSS</acronym>. All I've done is apply the following style rules to the links within the fixed <code>div</code>:</p>
+
+<pre>#fixed a {
+    display: block;
+    text-decoration: none;
+    padding: 0.5em;
+    background: navy none;
+    color: white;
+    font-weight: bold;
+    font-size: smaller;
+    margin-bottom: 2px;
+}
+
+
+#fixed a:hover {
+    background: red none;
+    color: white;
+}</pre>
+
+<p>Pretty straightforward, huh? Another advantage to this approach is that it means you can put markup for the fixed <code>div</code> at the end of your code. This means that visually-impaired users who are using a speech device to read the page won't keep reading out all the navigation links each time a new page is loaded.</p>
+
+
+<h2>information resource</h2>
+
+<p>You can find out more about <a href="http://msdn.microsoft.com/library/default.asp?url=/workshop/author/dhtml/overview/ccomment_ovw.asp"
+title="Conditional Comments">conditional comments</a> from the <acronym title="Microsoft Developer Network">MSDN</acronym>
+<a href="http://msdn.microsoft.com/default.asp" title="MSDN website">website</a>. As always, the best way to understand what is happening in these articles is to view the source code, but remember that this particular article <em>also</em> has a small, attached style sheet to make the Internet Explorer hack work. Thank you for reading.</p>
+
+<div class="address">
+<p><a href="http://validator.w3.org/check/referer" title="W3C XHTML validation tool">
+<img src="http://www.w3.org/Icons/valid-xhtml11"
+alt="XHTML 1.1 icon, indicating validated XHTML 1.1" height="31" width="88"
+longdesc="/long.html#xhtml" /></a><span class="invisible">&nbsp;|&nbsp;</span>
+<a href="http://jigsaw.w3.org/css-validator/check/referer" title="W3C/Jigsaw CSS validation tool">
+<img src="http://jigsaw.w3.org/css-validator/images/vcss"
+alt="CSS icon, indicating validated CSS" width="88" height="31"
+longdesc="/long.html#css" /></a></p>
+<p>&copy; Simon Jessey, 2002</p>
+</div>
+
+</div>
+
+<div id="fixed">
+<a href="/" title="Return to the jessey.net home page">jessey.net</a><span class="invisible">&nbsp;|&nbsp;</span>
+<a href="/simon/" title="jessey.net | Simon">Simon</a><span class="invisible">&nbsp;|&nbsp;</span>
+<a href="/simon/articles/" title="jessey.net | Simon | articles">articles</a><span class="invisible">&nbsp;|&nbsp;</span>
+<a href="/simon/articles/006.html" title="Previous article">previous article</a><span class="invisible">&nbsp;|&nbsp;</span>
+<a href="/simon/articles/008.html" title="Next article">next article</a>
+</div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

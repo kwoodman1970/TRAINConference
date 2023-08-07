@@ -1,0 +1,212 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+
+<HTML>
+
+<HEAD>
+  <TITLE>TRAIN 2007 Conference -- Join the Churches/Organizations Mailing List</TITLE>
+
+  <META HTTP-EQUIV="Content-Type"        CONTENT="text/html;charset=iso-8859-1">
+  <META HTTP-EQUIV="Content-Script-Type" CONTENT="text/javascript">
+
+  <LINK REL="shortcut icon" HREF="../train.ico">
+  <LINK REL="stylesheet"    HREF="../common.css" TYPE="text/css">
+
+  <!--[if lt IE 7]>
+    <LINK REL="stylesheet" HREF="../hacksIE.css" TYPE="text/css">
+  <![endif]-->
+
+  <SCRIPT TYPE="text/javascript" SRC="forms.js"></SCRIPT>
+  <SCRIPT TYPE="text/javascript">
+    <!--
+
+    function updateOtherDenominationDisabled(selectionBox)
+    {
+      var otherDenominationElement = document.getElementsByName("OtherDenomination")[0];
+
+      otherDenominationElement.disabled = (selectionBox.selectedIndex == 0);
+
+      return;
+    }
+
+    function isFormValid(form)
+    {
+      var submit = true;
+
+      if (
+        (form.elements["realname"].value   == "") ||
+        (form.elements["email"].value      == "") ||
+        (form.elements["Name"].value       == "") ||
+        (form.elements["Address"].value    == "") ||
+        (form.elements["City"].value       == "") ||
+        (form.elements["PostalCode"].value == "") ||
+        (form.elements["Phone"].value      == ""))
+      {
+        window.alert("At least one required entry has not been filled in.  Please fill in " +
+          "the missing information.");
+        submit = false;
+      }
+
+      return submit;
+    }
+
+    //-->
+  </SCRIPT>
+</HEAD>
+
+<BODY STYLE="background-image:none;">
+
+<H1>Join the Churches/Organizations Mailing List</H1>
+
+<HR>
+
+<!--FORM STYLE="text-align:center;" METHOD=POST ACTION="/cgi-bin/formmail.pl"-->
+<FORM STYLE="text-align:center;" METHOD=POST ACTION="formReceived.html">
+  <INPUT TYPE=HIDDEN NAME="subject"                 VALUE="TRAIN Churches Mailing List addition">
+  <INPUT TYPE=HIDDEN NAME="redirect"                VALUE="/forms/formReceived.html">
+  <INPUT TYPE=HIDDEN NAME="required"                VALUE="realname,email,Name,Address,City,Province,PostalCode,Phone">
+  <INPUT TYPE=HIDDEN NAME="sort"                    VALUE="order:IsContactPerson,ContactPosition,Name,Address,City,Province,PostalCode,Phone,Fax,ChurchEmail,Website,Denomination,OtherDenomination,ContactMethod">
+  <INPUT TYPE=HIDDEN NAME="recipient"               VALUE="dbadmin@trainconference.com">
+  <INPUT TYPE=HIDDEN NAME="print_blank_fields"      VALUE="1">
+  <INPUT TYPE=HIDDEN NAME="missing_fields_redirect" VALUE="/forms/formInvalid.html">
+
+  <TABLE>
+    <TR>
+      <TD>Your name:</TD>
+      <TD CLASS="Required">*</TD>
+      <TD><INPUT TYPE=TEXT NAME="realname" SIZE=40></TD>
+    </TR>
+    <TR>
+      <TD>Your e-mail address:</TD>
+      <TD CLASS="Required">*</TD>
+      <TD><INPUT TYPE=TEXT NAME="email" SIZE=40 ONCHANGE="validateEmail(this)"></TD>
+    </TR>
+    <TR>
+      <TD>Will you be TRAIN's contact person for this church or organization?</TD>
+      <TD></TD>
+      <TD><INPUT TYPE=CHECKBOX NAME="IsContactPerson" VALUE="Yes" ONCHANGE="enableElements(this, 'ContactPosition')"></TD>
+    </TR>
+    <TR>
+      <TD>If so then what's your position/role there?</TD>
+      <TD></TD>
+      <TD><INPUT ID="ContactPosition" TYPE=TEXT NAME="ContactPosition" SIZE=40 DISABLED></TD>
+    </TR>
+    <TR>
+      <TD>The church or organization's complete name:</TD>
+      <TD CLASS="Required">*</TD>
+      <TD><INPUT TYPE=TEXT NAME="Name" SIZE=40></TD>
+    </TR>
+    <TR>
+      <TD>Its mailing address:</TD>
+      <TD CLASS="Required">*</TD>
+      <TD><INPUT TYPE=TEXT NAME="Address" SIZE=40></TD>
+    </TR>
+    <TR>
+      <TD>Its town or city:</TD>
+      <TD CLASS="Required">*</TD>
+      <TD><INPUT TYPE=TEXT NAME="City" SIZE=20></TD>
+    </TR>
+    <TR>
+      <TD>Its province:</TD>
+      <TD CLASS="Required">*</TD>
+      <TD>
+        <SELECT NAME="Province">
+          <OPTION SELECTED>AB</OPTION>
+          <OPTION>BC</OPTION>
+          <OPTION>MB</OPTION>
+          <OPTION>NB</OPTION>
+          <OPTION>NL</OPTION>
+          <OPTION>NS</OPTION>
+          <OPTION>NU</OPTION>
+          <OPTION>NWT</OPTION>
+          <OPTION>ON</OPTION>
+          <OPTION>PEI</OPTION>
+          <OPTION>QC</OPTION>
+          <OPTION>SK</OPTION>
+          <OPTION>YK</OPTION>
+        </SELECT>
+      </TD>
+    </TR>
+    <TR>
+      <TD>Its postal code:</TD>
+      <TD CLASS="Required">*</TD>
+      <TD COLSPAN=2>
+        <INPUT TYPE=TEXT NAME="PostalCode" SIZE=7 ONCHANGE="validatePostalCode(this)">
+      </TD>
+    </TR>
+    <TR>
+      <TD>Its phone number (with area code):</TD>
+      <TD CLASS="Required">*</TD>
+      <TD><INPUT TYPE=TEXT NAME="Phone" SIZE=15 ONCHANGE="validatePhone(this)"></TD>
+    </TR>
+    <TR>
+      <TD>Its fax number (with area code):</TD>
+      <TD></TD>
+      <TD><INPUT TYPE=TEXT NAME="Fax" SIZE=15 ONCHANGE="validatePhone(this)"></TD>
+    </TR>
+    <TR>
+      <TD>Its main e-mail address:</TD>
+      <TD></TD>
+      <TD><INPUT TYPE=TEXT NAME="ChurchEmail" SIZE=40 ONCHANGE="validateEmail(this)"></TD>
+    </TR>
+    <TR>
+      <TD>Its website:</TD>
+      <TD></TD>
+      <TD STYLE="NoWrap">
+        http:// <INPUT TYPE=TEXT NAME="Website" SIZE=34 ONCHANGE="validateWebsite(this)">
+      </TD>
+    </TR>
+    <TR>
+      <TD>
+        Its denomination, if applicable:
+      </TD>
+      <TD></TD>
+      <TD>
+        <SELECT NAME="Denomination" ONCHANGE="updateOtherDenominationDisabled(this)">
+          <OPTION SELECTED>Other (see below)/None</OPTION>
+          <OPTION>Alliance</OPTION>
+          <OPTION>Anglican</OPTION>
+          <OPTION>Associated Gospel</OPTION>
+          <OPTION>Baptist</OPTION>
+          <OPTION>Christian Reformed</OPTION>
+          <OPTION>Church of Christ</OPTION>
+          <OPTION>Church of God</OPTION>
+          <OPTION>Congregational</OPTION>
+          <OPTION>Evangelical Free</OPTION>
+          <OPTION>Evangelical Missionary</OPTION>
+          <OPTION>Foursquare Gospel</OPTION>
+          <OPTION>Lutheran</OPTION>
+          <OPTION>Mennonite</OPTION>
+          <OPTION>Nazarene</OPTION>
+          <OPTION>Pentecostal</OPTION>
+          <OPTION>Presbyterian</OPTION>
+          <OPTION>Salvation Army</OPTION>
+          <OPTION>Seventh Day Adventist</OPTION>
+          <OPTION>United</OPTION>
+        </SELECT><BR>
+        <INPUT ID="OtherDenomination" TYPE=TEXT NAME="OtherDenomination" SIZE=40><BR>
+      </TD>
+    </TR>
+    <TR>
+      <TD>The preferred method of contact:</TD>
+      <TD></TD>
+      <TD>
+        <INPUT TYPE=RADIO NAME="ContactMethod" VALUE="eMail" CHECKED>e-mail<BR>
+        <INPUT TYPE=RADIO NAME="ContactMethod" VALUE="snailMail">Canada Post<BR>
+      </TD>
+    </TR>
+  </TABLE>
+
+  <P>
+    <SPAN CLASS="Required">*</SPAN> Information is required for these entries.
+  </P>
+
+  <P>
+    <INPUT TYPE=SUBMIT VALUE="Submit" ONCLICK="return isFormValid(this.form)">
+    <INPUT TYPE=RESET  VALUE="Start over">
+    <INPUT TYPE=BUTTON VALUE="Cancel" ONCLICK="window.close()">
+  </P>
+</FORM>
+
+</BODY>
+
+</HTML>

@@ -1,0 +1,38 @@
+DIV#MarqueeViewport
+{
+  position:  fixed;
+  top:  auto;
+  right:  0px;
+  bottom:  0px;
+  left:  0px;
+  margin:  0px;
+  border:  0px;
+  padding:  0px;
+  overflow:  hidden;
+  background-color:  #CBD6B5;
+}
+
+DIV#Marquee
+{
+  position:  relative;
+  top:  0px;
+  left:  0px;
+  margin:  0px;
+  border:  0px;
+  padding:  0px;
+  white-space:  nowrap;
+}
+
+@media print
+{
+  DIV#Marquee
+  {
+    position:  static;
+  }
+}
+
+DIV#Marquee IMG
+{
+  width:  225px;
+  height:  18px;
+}

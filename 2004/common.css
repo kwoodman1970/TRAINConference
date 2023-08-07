@@ -1,0 +1,159 @@
+.NoWrap
+{
+  white-space:  nowrap;
+}
+
+.Underline
+{
+  text-decoration:  underline;
+}
+
+.Blink
+{
+  text-decoration:  blink;
+}
+
+BODY
+{
+  margin:  0px;
+  border:  0px;
+  padding:  0px;
+  background-color:  #CBD6B5;
+  background-image:  url("background.gif");
+  background-position:  center center;
+  background-repeat:  no-repeat;
+  background-attachment:  fixed;
+}
+
+@media screen
+{
+  BODY
+  {
+    font-family:  Arial, Helvetica, sans-serif;
+  }
+}
+
+DIV#Menu
+{
+  position:  fixed;
+  margin:  0px;
+  border:  0px;
+  padding:  2px;
+  top:  0px;
+  right: auto;
+  bottom:  18px;
+  left:  0px;
+  width:  220px;
+  height:  auto;
+  overflow:  auto;
+  background-color:  transparent;
+}
+
+@media print
+{
+  DIV#Menu
+  {
+    display:  none;
+  }
+}
+
+DIV#Contents
+{
+  margin:  0px 0px 18px 228px;
+  border:  0px;
+  padding: 2px;
+}
+
+@media print
+{
+  DIV#Contents
+  {
+    margin-left:  0px;
+  }
+}
+
+A.MenuItem
+{
+  margin:  0px;
+  border:  0px;
+  padding:  0px;
+}
+
+H1
+{
+  text-align:  center;
+}
+
+IMG
+{
+  margin:  0px;
+  border:  0px;
+  padding:  0px;
+}
+
+IMG.MenuItem
+{
+  width:  200px;
+  height:  50px;
+  background-image:  url("menuItemBackground.gif");
+  background-repeat:  no-repeat;
+}
+
+IMG.MenuItem:hover
+{
+  background-image:  url("menuItemBackgroundHover.gif");
+}
+
+IMG.MenuItem.Inactive:hover
+{
+  background-image:  url("menuItemBackground.gif");
+}
+
+IMG.HeaderLeft
+{
+  float:  left;
+  width:  98px;
+  height:  150px;
+}
+
+IMG.HeaderCentre
+{
+  width:  439px;
+  height:  180px;
+}
+
+IMG.HeaderRight
+{
+  float:  right;
+  width:  240px;
+  height:  150px;
+}
+
+TABLE
+{
+  margin:  1px;
+  padding:  1px;
+  vertical-align:  top;
+}
+
+TABLE > TBODY > TR > TD > H4
+{
+  margin:  0px;
+}
+
+TABLE.Gridded
+{
+  border:  1px outset #CBD6B5;
+}
+
+TABLE.Gridded > TBODY > TR > TD, TH
+{
+  border:  1px inset #CBD6B5;
+}
+
+TD, TH
+{
+  padding:  2px;
+  vertical-align:  top;
+  text-align:  left;
+}

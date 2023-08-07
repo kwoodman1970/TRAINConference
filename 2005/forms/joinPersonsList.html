@@ -1,0 +1,171 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+
+<HTML>
+
+<HEAD>
+  <LINK REL="shortcut icon" HREF="../train.ico">
+
+  <TITLE>TRAIN 2005 Conference -- Join the Persons Mailing List</TITLE>
+
+  <META HTTP-EQUIV="Content-Type"        CONTENT="text/html;charset=iso-8859-1">
+  <META HTTP-EQUIV="Content-Script-Type" CONTENT="text/javascript">
+
+  <LINK REL="stylesheet" HREF="../common.css" TYPE="text/css">
+
+  <!--[IF IE 6]>
+    <LINK REL="stylesheet" HREF="../hacksIE.css" TYPE="text/css">
+  <![ENDIF]-->
+
+  <SCRIPT TYPE="text/javascript" SRC="forms.js"></SCRIPT>
+  <SCRIPT TYPE="text/javascript">
+    <!--
+
+    function isFormValid(form)
+    {
+      var submit = true;
+
+      if (
+        (form.Lastname.value   == "") ||
+        (form.Firstname.value  == "") ||
+        (form.email.value      == "") ||
+        (form.Address.value    == "") ||
+        (form.City.value       == "") ||
+        (form.Province.value   == "") ||
+        (form.PostalCode.value == "") ||
+        (form.HomePhone.value  == ""))
+      {
+        alert("At least one required entry has not been filled in.  Please " +
+          "fill in the missing information.");
+        submit = false;
+      }
+
+      if (submit)
+      {
+        form.realname.value = form.Lastname.value + ", " +
+          form.Firstname.value;
+      }
+
+      return submit;
+    }
+
+    //-->
+  </SCRIPT>
+</HEAD>
+
+<BODY STYLE="background-image:none;">
+
+<H1>Join the Persons Mailing List</H1>
+
+<HR>
+
+<!--FORM STYLE="text-align:center;" METHOD=POST ACTION="/cgi-bin/formmail"-->
+<FORM STYLE="text-align:center;" METHOD=POST ACTION="formReceived.html">
+  <DIV STYLE="display:none;">
+    <INPUT TYPE=HIDDEN ID="realname"                VALUE="(unknown)">
+    <INPUT TYPE=HIDDEN ID="subject"                 VALUE="TRAIN Persons Mailing List addition">
+    <INPUT TYPE=HIDDEN ID="redirect"                VALUE="/forms/formReceived.html">
+    <INPUT TYPE=HIDDEN ID="required"                VALUE="Lastname,Firstname,email,Address,City,Province,PostalCode,HomePhone">
+    <INPUT TYPE=HIDDEN ID="sort"                    VALUE="order:Lastname,Firstname,Address,City,Province,PostalCode,HomePhone,WorkPhone,Fax,ContactMethod">
+    <INPUT TYPE=HIDDEN ID="recipient"               VALUE="dbadmin@trainconference.com">
+    <INPUT TYPE=HIDDEN ID="print_blank_fields"      VALUE="1">
+    <INPUT TYPE=HIDDEN ID="missing_fields_redirect" VALUE="/forms/formInvalid.html">
+  </DIV>
+
+  <TABLE>
+    <TR>
+      <TD>Your surname:</TD>
+      <TD CLASS="Required">*</TD>
+      <TD><INPUT TYPE=TEXT ID="Lastname" SIZE=40></TD>
+    </TR>
+    <TR>
+      <TD>Your first name:</TD>
+      <TD CLASS="Required">*</TD>
+      <TD><INPUT TYPE=TEXT ID="Firstname" SIZE=40></TD>
+    </TR>
+    <TR>
+      <TD>Your e-mail address:</TD>
+      <TD CLASS="Required">*</TD>
+      <TD><INPUT TYPE=TEXT ID="email" SIZE=40 ONCHANGE="validateEmail(this)"></TD>
+    </TR>
+    <TR>
+      <TD>Your mailing address:</TD>
+      <TD CLASS="Required">*</TD>
+      <TD><INPUT TYPE=TEXT ID="Address" SIZE=40></TD>
+    </TR>
+    <TR>
+      <TD>Your town or city:</TD>
+      <TD CLASS="Required">*</TD>
+      <TD><INPUT TYPE=TEXT ID="City" SIZE=20></TD>
+    </TR>
+    <TR>
+      <TD>Your province:</TD>
+      <TD CLASS="Required">*</TD>
+      <TD>
+        <SELECT ID="Province" ONFOCUS="fixFocus(this);">
+          <OPTION SELECTED>AB</OPTION>
+          <OPTION>BC</OPTION>
+          <OPTION>MB</OPTION>
+          <OPTION>NB</OPTION>
+          <OPTION>NL</OPTION>
+          <OPTION>NS</OPTION>
+          <OPTION>NU</OPTION>
+          <OPTION>NWT</OPTION>
+          <OPTION>ON</OPTION>
+          <OPTION>PEI</OPTION>
+          <OPTION>QC</OPTION>
+          <OPTION>SK</OPTION>
+          <OPTION>YK</OPTION>
+        </SELECT>
+      </TD>
+    </TR>
+    <TR>
+      <TD>Your postal code:</TD>
+      <TD CLASS="Required">*</TD>
+      <TD COLSPAN=2>
+        <INPUT TYPE=TEXT ID="PostalCode" SIZE=7 ONFOCUS="fixFocus(this);" ONCHANGE="validatePostalCode(this);">
+      </TD>
+    </TR>
+    <TR>
+      <TD>Your home phone number (with area code):</TD>
+      <TD CLASS="Required">*</TD>
+      <TD><INPUT TYPE=TEXT ID="HomePhone" SIZE=15 ONFOCUS="fixFocus(this);" ONCHANGE="validatePhone(this)"></TD>
+    </TR>
+    <TR>
+      <TD>Your work phone number (with area code):</TD>
+      <TD></TD>
+      <TD><INPUT TYPE=TEXT ID="WorkPhone" SIZE=15 ONCHANGE="validatePhone(this)"></TD>
+    </TR>
+    <TR>
+      <TD>Your fax number (with area code):</TD>
+      <TD></TD>
+      <TD><INPUT TYPE=TEXT ID="Fax" SIZE=15 ONCHANGE="validatePhone(this)"></TD>
+    </TR>
+    <TR>
+      <TD>Your preferred method of contact:</TD>
+      <TD></TD>
+      <TD>
+        <INPUT TYPE=RADIO ID="ContactMethod" VALUE="eMail" CHECKED>e-mail<BR>
+        <INPUT TYPE=RADIO ID="ContactMethod" VALUE="snailMail">Canada Post<BR>
+      </TD>
+    </TR>
+  </TABLE>
+
+  <P>
+    <SPAN CLASS="Required">*</SPAN> Information is required for these entries.
+  </P>
+
+  <P>
+    <B>Note:</B> We will contact you to confirm your desire to be added to this
+    mailing list.
+  </P>
+
+  <P>
+    <INPUT TYPE=SUBMIT VALUE="Submit" ONCLICK="return isFormValid(this.form)">
+    <INPUT TYPE=RESET VALUE="Start over">
+    <INPUT TYPE=BUTTON VALUE="Cancel" ONCLICK="window.close()">
+  </P>
+</FORM>
+
+</BODY>
+
+</HTML>

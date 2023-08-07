@@ -1,0 +1,15 @@
+.Required
+{
+  color:  red;
+}
+
+BODY
+{
+  padding:  4px;
+  background-repeat:  repeat;
+}
+
+TD.Required
+{
+  text-align:  right;
+}

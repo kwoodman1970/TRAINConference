@@ -1,0 +1,107 @@
+<?xml version="1.0"?>
+
+<rss version="2.0">
+
+<channel>
+
+<title>TRAIN Conference</title>
+<link>http://www.trainconference.com</link>
+<description>
+  TRAIN Conference (Calgary, Alberta, Canada) offers seminars and resources to
+  equip and encourage Christian Education workers in their ministry areas.
+</description>
+<image>
+  <url>http://www.trainconference.com/logoRSS.gif</url>
+  <title>TRAIN -- encouraging, equipping</title>
+  <link>http://www.trainconference.com</link>
+  <width>144</width>
+  <height>59</height>
+</image>
+<language>en-us</language>
+
+<item>
+  <title>
+    Exhibitors and Attending Churches
+  </title>
+  <link>http://www.trainconference.com/webLinks.html</link>
+  <category>Christian conferences</category>
+  <pubDate>Thu, 04 Aug 2005 00:00:00 MST</pubDate>
+  <description>
+    Exhibitors have begun requesting space at the TRAIN 2005 Conference.
+    Churches are starting to indicate their forthcoming participation in the
+    conference, too.  If your church is also planning on sending people then
+    let us know and we'll be happy to add a hyperlink its website.
+  </description>
+</item>
+
+<item>
+  <title>
+    Conference Information
+  </title>
+  <link>http://www.trainconference.com/conference.html</link>
+  <category>Christian conferences</category>
+  <pubDate>Sun, 31 Aug 2005 00:00:00 MST</pubDate>
+  <description>
+    Details about the TRAIN 2005 Conference are now available.  Our keynote
+    speaker will be Randy Carter of Straight Talk Ministries.  The Resource
+    Centre will include displays &amp; exhibits from a variety of publishers,
+    including Cook Communications, Gospel Light, Group, Standard Publishing and
+    Zondervan.  There'll be a special Friday night session for youth and youth
+    ministers &amp; sponsors, too, with Robin Johnson and the AUC (Alliance
+    University College) Worship Band.
+  </description>
+</item>
+
+<item>
+  <title>
+    Bonus Seminars -- Create a Volunteer Revolution
+  </title>
+  <link>http://www.trainconference.com/conference.html#volunteerRevolution</link>
+  <category>Christian conferences</category>
+  <pubDate>Sun, 31 Aug 2005 00:00:00 MST</pubDate>
+  <description>
+    We are pleased to be able to partner this year with The Leadership Centre
+    Willow Creek Canada to offer TRAIN 2005 registrants a bonus day on Friday
+    at the Creating A Volunteer Revolution conference at no additional cost.
+    One of the biggest needs expressed by church leaders is for more committed
+    volunteers.  Even more important, your people long to have eternal
+    significance.  That's why it's time for a revolution... one that helps you
+    envision, empower and deploy every Christ-follower in your church to get
+    off the sidelines and walk into the work of God's world-changing Kingdom!
+  </description>
+</item>
+
+<item>
+  <title>
+    Registration Information
+  </title>
+  <link>http://www.trainconference.com/registration.html</link>
+  <category>Christian conferences</category>
+  <pubDate>Sun, 31 Aug 2005 00:00:00 MST</pubDate>
+  <description>
+    Register for the TRAIN 2005 Conference using either the online or mail-in
+    registration forms.  Walk-in registrations will also be accepted, though
+    some seminars may be full by then.  A detailed fee schedule is available,
+    as well as a list of nearby hotels for out out-of-town guests.
+  </description>
+</item>
+
+<item>
+  <title>
+    The TRAIN 2005 Conference is Now Over -- See You in 2006!
+  </title>
+  <link>http://www.trainconference.com/</link>
+  <category>Christian conferences</category>
+  <pubDate>Fri, 16 Dec 2005 00:00:00 MST</pubDate>
+  <description>
+    The TRAIN 2005 Conference is now over.  We trust and pray that you found
+    encouragement in the Lord, and that you will continue to stand firm in your
+    faith, to speak boldly to those around you, and to serve faithfully where
+    the Spirit has led you to.  We look forward to doing more for you in 2006.
+    The TRAIN 2006 Conference will be held November 3 &amp; 4, 2006.
+  </description>
+</item>
+
+</channel>
+
+</rss>

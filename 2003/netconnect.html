@@ -1,0 +1,197 @@
+<HTML>
+
+<HEAD>
+  <TITLE>TRAIN 2003 Conference -- NetConnect</TITLE>
+
+  <SCRIPT LANGUAGE="JavaScript" SRC="common.js"></SCRIPT>
+  <SCRIPT LANGUAGE="JavaScript" SRC="forms.js"></SCRIPT>
+</HEAD>
+
+<BODY BGCOLOR=#0080FF BACKGROUND="background.gif" TEXT=#FFFFFF LINK=#00FFFF VLINK=#FF80FF>
+
+<P ALIGN=CENTER>
+  <IMG SRC="20thAnniversary.jpg" WIDTH=106 HEIGHT=150 ALIGN=LEFT>
+  <IMG SRC="daringToDream.jpg" WIDTH=145 HEIGHT=150 ALIGN=RIGHT>
+  <IMG SRC="logoComplete.gif" WIDTH=439 HEIGHT=180>
+</P>
+
+<H3 ALIGN=CENTER>TEACHING&nbsp;RESOURCING&nbsp;AFFIRMING&nbsp;INSPIRING&nbsp;NETWORKING</H3>
+
+<P ALIGN=CENTER>
+  <I>This page last updated:</I>  <B>2003/11/08</B><BR>
+  &nbsp;<BR>
+</P>
+
+<TABLE>
+  <TR>
+    <TD VALIGN=TOP WIDTH=250>
+      <SCRIPT LANGUAGE="JavaScript">
+        writeMenuItem("home", "Home");
+        writeMenuItem("conference", "Conference Information");
+        writeMenuItem("netconnect", "NetConnect");
+        writeMenuItem("forms", "Forms");
+        writeMenuItem("whoWeAre", "Who We Are");
+      </SCRIPT>
+      <NOSCRIPT>
+        JavaScript is required to view this website.
+      </NOSCRIPT>
+
+      <UL>
+        <LI><A HREF="#about">About NetConnect</A></LI>
+        <LI><A HREF="#suggest">Suggest a Discussion Topic</A></LI>
+        <LI><A HREF="#forums">Forums</A></LI>
+      </UL>
+    </TD>
+    <TD VALIGN=TOP>
+      <HR>
+
+      <H1 ALIGN=CENTER>
+        <IMG SRC="netconnect/logoMini.gif" ALIGN=TOP>
+        NetConnect
+        <IMG SRC="netconnect/logoMini.gif" ALIGN=TOP>
+      </H1>
+
+      <P><HR></P>
+
+      <A NAME="about"></A>
+      <H2>About NetConnect</H2>
+
+      <P>
+        <B>NetConnect</B> is an exciting new feature of TRAIN Conference.  Here
+        you'll be able to connect and network with others in your area of
+        ministry.
+      </P>
+
+      <P>
+        NetConnect uses the bulletin-board model for communication &#8211; that
+        is, a person posts a message for all to see, and others can post
+        further messages to respond to it.  Do you have a question?  Post a
+        message!  Do you have an answer?  Post a message!  Do you have an
+        announcement?  Post a message!  Do you have a warning?  Post a message!
+      </P>
+
+      <P>
+        So go beyond the conference &#8211; <I>way beyond</I> the
+        conference &#8211; and tap into one of God's best resources:  the Body
+        of Christ!
+      </P>
+
+      <P><HR WIDTH=50%></P>
+
+      <P>
+        <B>Join us during Saturday's lunch break</B> for an informal networking
+        time.  Meet with fellow believers who share a passion for your area of
+        ministry and:
+      </P>
+
+      <UL>
+        <LI>Share your experience and successes</LI>
+        <LI>Learn from their experiences and successes</LI>
+        <LI>Discuss common issues and concerns</LI>
+        <LI>Get to know other members of the Body of Christ</LI>
+      </UL>
+
+      <P>
+        Be sure to check for details on discussion topics in the TRAIN 2003
+        Conference Booklet when you arrive.
+      </P>
+
+      <P><HR></P>
+
+      <A NAME="suggest"></A>
+      <H2>Suggest a Discussion Topic</H2>
+
+      <P>
+        Do you have a topic you'd like to discuss?  Let us know here:
+      </P>
+
+      <!--FORM NAME="suggestTopic" METHOD=POST ACTION="/cgi-bin/formmail"-->
+      <FORM NAME="suggestTopic" METHOD=POST ACTION="formReceived.html">
+        <INPUT TYPE=HIDDEN NAME="subject"            VALUE="Suggested topic for TRAIN NetConnect">
+        <INPUT TYPE=HIDDEN NAME="redirect"           VALUE="../formReceived.html">
+        <INPUT TYPE=HIDDEN NAME="sort"               VALUE="order:topic">
+        <INPUT TYPE=HIDDEN NAME="recipient"          VALUE="netconnect@trainconference.com">
+        <INPUT TYPE=HIDDEN NAME="print_blank_fields" VALUE="1">
+        <TABLE BORDER>
+          <TR>
+            <TD>
+              <TABLE>
+                <TR>                                                                              
+                  <TD>Your name:</TD>                                                 
+                  <TD><INPUT TYPE=TEXT NAME="realname" SIZE=40></TD>                           
+                </TR>                                                                             
+                <TR>                                                                              
+                  <TD>Your e-mail address:</TD>                                       
+                  <TD><INPUT TYPE=TEXT NAME="email" SIZE=40 onChange="validateEmail(this)"></TD>
+                </TR>                                                                             
+                <TR>                                                                              
+                  <TD>Your suggested topic:</TD>                                       
+                  <TD>
+                    <TEXTAREA NAME="topic" ROWS=5 COLS=40 WRAP=AUTO></TEXTAREA>
+                  </TD>
+                </TR>                                                                             
+              </TABLE>
+            </TD>
+          </TR>
+        </TABLE>
+
+        <P ALIGN=CENTER>
+          <INPUT TYPE=SUBMIT VALUE="Submit this form" onClick="return isSuggestTopicValid(this.form)">
+          <INPUT TYPE=RESET VALUE="Start over">
+        </P>
+      </FORM>
+
+      <P><HR></P>
+
+      <A NAME="forums"></A>
+      <H2>NetConnect Forums</H2>
+
+      <P>
+        These forums are for those who wish to continue their discussions from
+        Saturday, November 8 online.  This year's topics are:
+      </P>
+
+      <TABLE ALIGN=CENTER>
+        <TR>
+          <TD VALIGN=CENTER>
+            <A HREF="netconnect/legsToDreams/index.html"><IMG SRC="netconnect/logoMini.gif" BORDER=0></A>
+          </TD>
+          <TD VALIGN=CENTER>
+            <A HREF="netconnect/legsToDreams/index.html">Putting Legs to
+            Dreams</A>
+          </TD>
+        </TR>
+        <TR>
+          <TD VALIGN=CENTER>
+            <A HREF="netconnect/campusMinistry/index.html"><IMG SRC="netconnect/logoMini.gif" BORDER=0></A>
+          </TD>
+          <TD VALIGN=CENTER>
+            <A HREF="netconnect/campusMinistry/index.html">Campus Ministry</A>
+          </TD>
+        </TR>
+        <TR>
+          <TD VALIGN=CENTER>
+            <A HREF="netconnect/youngAdults/index.html"><IMG SRC="netconnect/logoMini.gif" BORDER=0></A>
+          </TD>
+          <TD VALIGN=CENTER>
+            <A HREF="netconnect/youngAdults/index.html">Young Adults in
+            Ministry</A>
+          </TD>
+        </TR>
+        <TR>
+          <TD VALIGN=CENTER>
+            <A HREF="netconnect/empoweringChildren/index.html"><IMG SRC="netconnect/logoMini.gif" BORDER=0></A>
+          </TD>
+          <TD VALIGN=CENTER>
+            <A HREF="netconnect/empoweringChildren/index.html">Empowering
+            Children in Ministry</A>
+          </TD>
+        </TR>
+      </TABLE>
+    </TD>
+  </TR>
+</TABLE>
+
+</BODY>
+
+</HTML>

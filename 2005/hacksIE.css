@@ -1,0 +1,10 @@
+TABLE.Gridded
+{
+  border-width:  2px;
+  border-color:  white;
+}
+
+TD,TH
+{
+  border-color:  white;
+}

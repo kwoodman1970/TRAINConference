@@ -1,0 +1,53 @@
+TABLE.Schedule
+{
+  width:  33%;
+  float:  left;
+  background-color:  #F3E6B4;
+  text-align:  right;
+}
+
+TABLE.Schedule TH
+{
+  background-color:  black;
+  color:  white;
+}
+
+TABLE.Schedule TD + TD
+{
+  text-align:  left;
+}
+
+TABLE.Schedule TD.Highlight
+{
+  font-weight:  bold;
+}
+
+TABLE.Schedule TD.SessionA
+{
+  background-color:  #0C5D81;
+  color:  white;
+}
+
+TABLE.Schedule TD.SessionB
+{
+  background-color:  #0C5D81;
+  color:  white;
+}
+
+TABLE.Schedule TD.SessionC
+{
+  background-color:  #0C5D81;
+  color:  white;
+}
+
+TABLE.Tracks TH
+{
+  background-color:  #0C5D81;
+  color:  white;
+}
+
+TABLE.Tracks IMG
+{
+  width:  100px;
+  height:  125px;
+}

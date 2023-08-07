@@ -1,0 +1,125 @@
+.Blink
+{
+  text-decoration:  blink;
+}
+
+.NoWrap
+{
+  white-space:  nowrap;
+}
+
+.Required
+{
+  color:  red;
+}
+
+.Underline
+{
+  text-decoration:  underline;
+}
+
+A:link
+{
+  color:  blue;
+}
+
+A:visited
+{
+  color:  fuchsia;
+}
+
+BODY
+{
+  margin:  0px;
+  border:  0px;
+  padding:  0px;
+  color:  black;
+  background-color:  white;
+  background-image:  url("background.gif");
+  background-position:  center center;
+  background-repeat:  no-repeat;
+  background-attachment:  fixed;
+}
+
+@media screen
+{
+  BODY
+  {
+    font-family:  Arial, Helvetica, sans-serif;
+  }
+}
+
+H1
+{
+  text-align:  center;
+}
+
+HR
+{
+  color:  #90C058;
+  background-color:  #90C058;
+  height:  4px;
+}
+
+IMG
+{
+  margin:  0px;
+  border:  0px;
+  padding:  0px;
+}
+
+IMG.New
+{
+  width:  45px;
+  height:  23px;
+  vertical-align:  middle;
+}
+
+IMG.RSS
+{
+  width:  36px;
+  height:  14px;
+  vertical-align:  middle;
+}
+
+TABLE
+{
+  margin:  1px;
+  padding:  1px;
+  vertical-align:  top;
+}
+
+TABLE > TBODY > TR > TD > H4
+{
+  margin:  0px;
+}
+
+TABLE.Gridded
+{
+  border:  1px outset #CBD6B5;
+  margin-bottom:  1em;
+  background-color:  white;
+}
+
+TABLE.Gridded > TBODY > TR > TD, TH
+{
+  border:  1px inset #CBD6B5;
+}
+
+TD, TH
+{
+  padding:  2px;
+  vertical-align:  top;
+  text-align:  left;
+}
+
+TD.Fee
+{
+  text-align:  right;
+  font-weight:  bold;
+}
+
+TD.Required
+{
+  text-align:  right;
+}

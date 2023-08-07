@@ -1,0 +1,409 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+
+<HTML>
+
+<HEAD>
+  <LINK REL="shortcut icon" HREF="../train.ico">
+
+  <TITLE>TRAIN 2005 Conference -- Presenter Information</TITLE>
+
+  <META HTTP-EQUIV="Content-Type"        CONTENT="text/html;charset=iso-8859-1">
+  <META HTTP-EQUIV="Content-Script-Type" CONTENT="text/javascript">
+
+  <LINK REL="stylesheet" HREF="../common.css" TYPE="text/css">
+
+  <!--[IF IE 6]>
+    <LINK REL="stylesheet" HREF="../hacksIE.css" TYPE="text/css">
+  <![ENDIF]-->
+
+  <STYLE TYPE="text/css">
+    <!--
+    .Centered
+    {
+      text-align:  center;
+      vertical-align:  middle;
+    }
+    //-->
+  </STYLE>
+
+  <SCRIPT TYPE="text/javascript" SRC="../cookies.js"></SCRIPT>
+  <SCRIPT TYPE="text/javascript" SRC="forms.js"></SCRIPT>
+  <SCRIPT TYPE="text/javascript">
+    <!--
+
+    function isFormValid(form)
+    {
+      var submit = true;
+
+      if ((form.realname.value == "") || (form.email.value == ""))
+      {
+        alert("Please provide both your name and e-mail address.");
+        submit = false;
+      }
+
+      if ((form.Resource_ISBN.value == "") && (form.Resource_Title.value == "") &&
+        ((form.Resource_Author.value != "") || (form.Resource_Publisher.value != "") ||
+        (form.Resource_Copyright.value != "")))
+      {
+        window.alert("At the very least, we need either the ISBN or the title of the " +
+          "resource that you're requesting.");
+        submit = false;
+      }
+
+      if (submit)
+      {
+        setCookie("realname", form.realname.value, "trainconference.com", "/cgi-bin");
+        setCookie("email", form.email.value, "trainconference.com", "/cgi-bin");
+
+        if ((form.Resource_ISBN.value != "") || (form.Resource_Title.value != "") ||
+          (form.Resource_Author.value != "") || (form.Resource_Copyright.value != ""))
+        {
+          setCookie("submittedResources", escape(form.Resource_ISBN.value) + "&" +
+            escape(form.Resource_Title.value) + "&" + escape(form.Resource_Author.value) +
+            "&" + escape(form.Resource_Publisher.value) + "&" +
+            escape(form.Resource_Copyright.value), "trainconference.com", "/cgi-bin");
+        }
+        else
+          deleteCookie("submittedResources", "trainconference.com", "/cgi-bin");
+      }
+
+      return submit;
+    }
+
+    //-->
+  </SCRIPT>
+</HEAD>
+
+<BODY STYLE="background-image:none">
+
+<H1>Presenter Information</H1>
+
+<HR>
+
+<!--FORM STYLE="text-align:center;" NAME="equipmentRequest" METHOD=POST ACTION="/cgi-bin/formmail"-->
+<FORM STYLE="text-align:center;" NAME="equipmentRequest" METHOD=POST ACTION="formReceived.html">
+  <DIV STYLE="display:none;">
+    <INPUT TYPE=HIDDEN NAME="subject"                 VALUE="TRAIN Equipment Request">
+    <INPUT TYPE=HIDDEN NAME="redirect"                VALUE="/forms/presenterInfo2.html">
+    <INPUT TYPE=HIDDEN NAME="required"                VALUE="realname,email">
+    <INPUT TYPE=HIDDEN NAME="sort"                    VALUE="order:Wants_Lunch,Session_A_Title,Session_B_Title,Session_C_Title,Session_D_Title,Overhead_Session_A,Overhead_Session_B,Overhead_Session_C,Overhead_Session_D,Screen_Session_A,Screen_Session_B,Screen_Session_C,Screen_Session_D,Extension_Cord_Session_A,Extension_Cord_Session_B,Extension_Cord_Session_C,Extension_Cord_Session_D,Whiteboard_Session_A,Whiteboard_Session_B,Whiteboard_Session_C,Whiteboard_Session_D,Sm_Tables_Session_A,Sm_Tables_Session_B,Sm_Tables_Session_C,Sm_Tables_Session_D,Lg_Tables_Session_A,Lg_Tables_Session_B,Lg_Tables_Session_C,Lg_Tables_Session_D,CD_Player_Session_A,CD_Player_Session_B,CD_Player_Session_C,CD_Player_Session_D,Podium_Session_A,Podium_Session_B,Podium_Session_C,Podium_Session_D,Other_Session_A,Other_Session_B,Other_Session_C,Other_Session_D,Room_Arrangement,Publishable_Email,Publishable_Phone,Resource_ISBN,Resource_Title,Resource_Author,Resource_Publisher,Resource_Copyright">
+    <INPUT TYPE=HIDDEN NAME="recipient"               VALUE="presenters@trainconference.com">
+    <INPUT TYPE=HIDDEN NAME="print_blank_fields"      VALUE="0">
+    <INPUT TYPE=HIDDEN NAME="missing_fields_redirect" VALUE="/forms/formInvalid.html">
+  </DIV>
+
+  <TABLE>
+    <TR>
+      <TD>Your name:</TD>
+      <TD CLASS="Required">*</TD>
+      <TD><INPUT TYPE=TEXT NAME="realname" SIZE=40></TD>
+    </TR>
+    <TR>
+      <TD>Your e-mail address:</TD>
+      <TD CLASS="Required">*</TD>
+      <TD><INPUT TYPE=TEXT NAME="email" SIZE=40 ONCHANGE="validateEmail(this)"></TD>
+    </TR>
+    <TR>
+      <TD>Lunch Options:</TD>
+      <TD CLASS="Required">&nbsp;</TD>
+      <TD>
+        <TABLE>
+          <TR>
+            <TD><INPUT TYPE=RADIO NAME="Wants_Lunch" VALUE="Yes"></TD>
+            <TD>
+              I would like to purchase a bag lunch for November 5th at a
+              reduced cost of $5.00
+            </TD>
+          </TR>
+          <TR>
+            <TD><INPUT TYPE=RADIO NAME="Wants_Lunch" VALUE="No"></TD>
+            <TD>Thanks for the offer, but I will do lunch on my own</TD>
+          </TR>
+        </TABLE>
+      </TD>
+    </TR>
+    <TR>
+      <TD COLSPAN=3>
+        <HR>
+        <H2>Equipment Requests</H2>
+        <P>
+          What is the title of your presentation (if any) for:
+        </P>
+      </TD>
+    </TR>
+    <TR>
+      <TD>Session A?</TD>
+      <TD CLASS="Required">&nbsp;</TD>
+      <TD><INPUT TYPE=TEXT NAME="Session_A_Title" SIZE=40></TD>
+    </TR>
+    <TR>
+      <TD>Session B?</TD>
+      <TD CLASS="Required">&nbsp;</TD>
+      <TD><INPUT TYPE=TEXT NAME="Session_B_Title" SIZE=40></TD>
+    </TR>
+    <TR>
+      <TD>Session C?</TD>
+      <TD CLASS="Required">&nbsp;</TD>
+      <TD><INPUT TYPE=TEXT NAME="Session_C_Title" SIZE=40></TD>
+    </TR>
+    <TR>
+      <TD>Session D?</TD>
+      <TD CLASS="Required">&nbsp;</TD>
+      <TD><INPUT TYPE=TEXT NAME="Session_D_Title" SIZE=40></TD>
+    </TR>
+    <TR>
+      <TD COLSPAN=3>&nbsp</TD>
+    </TR>
+    <TR>
+      <TD>
+        What equipment you will need for each session?<BR>
+        <BR>
+        <B>Please note:  We will NOT be able to provide PowerPoint
+        equipment, TV's, VCR's or DVD players.  Sorry!</B>
+      </TD>
+      <TD CLASS="Required">&nbsp;</TD>
+      <TD>
+      <TABLE CLASS="Gridded" BORDER>
+        <TR>
+          <TH CLASS="NoWrap">Equipment</TH>
+          <TH CLASS="NoWrap">Session A</TH>
+          <TH CLASS="NoWrap">Session B</TH>
+          <TH CLASS="NoWrap">Session C</TH>
+          <TH CLASS="NoWrap">Session D</TH>
+        </TR>
+        <TR>
+          <TD>Overhead Projector</TD>
+          <TD CLASS="Centered">
+            <INPUT TYPE=CHECKBOX NAME="Overhead_Session_A" VALUE="Yes">
+          </TD>
+          <TD CLASS="Centered">
+            <INPUT TYPE=CHECKBOX NAME="Overhead_Session_B" VALUE="Yes">
+          </TD>
+          <TD CLASS="Centered">
+            <INPUT TYPE=CHECKBOX NAME="Overhead_Session_C" VALUE="Yes">
+          </TD>
+          <TD CLASS="Centered">
+            <INPUT TYPE=CHECKBOX NAME="Overhead_Session_D" VALUE="Yes">
+          </TD>
+        </TR>
+        <TR>
+          <TD>Screen</TD>
+          <TD CLASS="Centered">
+            <INPUT TYPE=CHECKBOX NAME="Screen_Session_A" VALUE="Yes">
+          </TD>
+          <TD CLASS="Centered">
+            <INPUT TYPE=CHECKBOX NAME="Screen_Session_B" VALUE="Yes">
+          </TD>
+          <TD CLASS="Centered">
+            <INPUT TYPE=CHECKBOX NAME="Screen_Session_C" VALUE="Yes">
+          </TD>
+          <TD CLASS="Centered">
+            <INPUT TYPE=CHECKBOX NAME="Screen_Session_D" VALUE="Yes">
+          </TD>
+        </TR>
+        <TR>
+          <TD>Extension Cord</TD>
+          <TD CLASS="Centered">
+            <INPUT TYPE=CHECKBOX NAME="Extension_Cord_Session_A" VALUE="Yes">
+          </TD>
+          <TD CLASS="Centered">
+            <INPUT TYPE=CHECKBOX NAME="Extension_Cord_Session_B" VALUE="Yes">
+          </TD>
+          <TD CLASS="Centered">
+            <INPUT TYPE=CHECKBOX NAME="Extension_Cord_Session_C" VALUE="Yes">
+          </TD>
+          <TD CLASS="Centered">
+            <INPUT TYPE=CHECKBOX NAME="Extension_Cord_Session_D" VALUE="Yes">
+          </TD>
+        </TR>
+        <TR>
+          <TD>Whiteboard</TD>
+          <TD CLASS="Centered">
+            <INPUT TYPE=CHECKBOX NAME="Whiteboard_Session_A" VALUE="Yes">
+          </TD>
+          <TD CLASS="Centered">
+            <INPUT TYPE=CHECKBOX NAME="Whiteboard_Session_B" VALUE="Yes">
+          </TD>
+          <TD CLASS="Centered">
+            <INPUT TYPE=CHECKBOX NAME="Whiteboard_Session_C" VALUE="Yes">
+          </TD>
+          <TD CLASS="Centered">
+            <INPUT TYPE=CHECKBOX NAME="Whiteboard_Session_D" VALUE="Yes">
+          </TD>
+        </TR>
+        <TR>
+          <TD>No. of Small Tables</TD>
+          <TD CLASS="Centered">
+            <INPUT TYPE=TEXT NAME="Sm_Tables_Session_A" SIZE=3 ONCHANGE="validateNumber(this);">
+          </TD>
+          <TD CLASS="Centered">
+            <INPUT TYPE=TEXT NAME="Sm_Tables_Session_B" SIZE=3 ONCHANGE="validateNumber(this);">
+          </TD>
+          <TD CLASS="Centered">
+            <INPUT TYPE=TEXT NAME="Sm_Tables_Session_C" SIZE=3 ONCHANGE="validateNumber(this);">
+          </TD>
+          <TD CLASS="Centered">
+            <INPUT TYPE=TEXT NAME="Sm_Tables_Session_D" SIZE=3 ONCHANGE="validateNumber(this);">
+          </TD>
+        </TR>
+        <TR>
+          <TD>No. of Large Tables</TD>
+          <TD CLASS="Centered">
+            <INPUT TYPE=TEXT NAME="Lg_Tables_Session_A" SIZE=3 ONCHANGE="validateNumber(this);">
+          </TD>
+          <TD CLASS="Centered">
+            <INPUT TYPE=TEXT NAME="Lg_Tables_Session_B" SIZE=3 ONCHANGE="validateNumber(this);">
+          </TD>
+          <TD CLASS="Centered">
+            <INPUT TYPE=TEXT NAME="Lg_Tables_Session_C" SIZE=3 ONCHANGE="validateNumber(this);">
+          </TD>
+          <TD CLASS="Centered">
+            <INPUT TYPE=TEXT NAME="Lg_Tables_Session_D" SIZE=3 ONCHANGE="validateNumber(this);">
+          </TD>
+        </TR>
+        <TR>
+          <TD>CD Player</TD>
+          <TD CLASS="Centered">
+            <INPUT TYPE=CHECKBOX NAME="CD_Player_Session_A" VALUE="Yes">
+          </TD>
+          <TD CLASS="Centered">
+            <INPUT TYPE=CHECKBOX NAME="CD_Player_Session_B" VALUE="Yes">
+          </TD>
+          <TD CLASS="Centered">
+            <INPUT TYPE=CHECKBOX NAME="CD_Player_Session_C" VALUE="Yes">
+          </TD>
+          <TD CLASS="Centered">
+            <INPUT TYPE=CHECKBOX NAME="CD_Player_Session_D" VALUE="Yes">
+          </TD>
+        </TR>
+        <TR>
+          <TD>Music Stand/Podium</TD>
+          <TD CLASS="Centered">
+            <INPUT TYPE=CHECKBOX NAME="Podium_Session_A" VALUE="Yes">
+          </TD>
+          <TD CLASS="Centered">
+            <INPUT TYPE=CHECKBOX NAME="Podium_Session_B" VALUE="Yes">
+          </TD>
+          <TD CLASS="Centered">
+            <INPUT TYPE=CHECKBOX NAME="Podium_Session_C" VALUE="Yes">
+          </TD>
+          <TD CLASS="Centered">
+            <INPUT TYPE=CHECKBOX NAME="Podium_Session_D" VALUE="Yes">
+          </TD>
+        </TR>
+        <TR>
+          <TD>Other</TD>
+          <TD CLASS="Centered">
+            <INPUT TYPE=TEXT NAME="Other_Session_A" SIZE=8>
+          </TD>
+          <TD CLASS="Centered">
+            <INPUT TYPE=TEXT NAME="Other_Session_B" SIZE=8>
+          </TD>
+          <TD CLASS="Centered">
+            <INPUT TYPE=TEXT NAME="Other_Session_C" SIZE=8>
+          </TD>
+          <TD CLASS="Centered">
+            <INPUT TYPE=TEXT NAME="Other_Session_D" SIZE=8>
+          </TD>
+        </TR>
+      </TABLE>
+      </TD>
+    </TR>
+    <TR>
+      <TD>Will you need your room(s) arranged in any special way?</TD>
+      <TD CLASS="Required">&nbsp;</TD>
+      <TD>
+        <TEXTAREA NAME="Room_Arrangement" ROWS=4 COLS=25></TEXTAREA>
+      </TD>
+    </TR>
+    <TR>
+      <TD COLSPAN=3>
+        <HR>
+        <H2>Publishable Contact Information</H2>
+
+        <P>
+          Each year we make a seminar presenters' contact list available to the
+          conference attendants.  To help respect your privacy, please confirm
+          the information you approve to be made available to the public.
+          <B>If we do not hear from you by August 30th, your information will
+          be published as noted in our records.</B>
+        </P>
+      </TD>
+    </TR>
+    <TR>
+      <TD>e-Mail Address:</TD>
+      <TD CLASS="Required">&nbsp;</TD>
+      <TD>
+        <INPUT TYPE=TEXT NAME="Publishable_Email" SIZE=40 ONCHANGE="validateEmail(this)">
+      </TD>
+    </TR>
+    <TR>
+      <TD>Phone Number:</TD>
+      <TD CLASS="Required">&nbsp;</TD>
+      <TD>
+        <INPUT TYPE=TEXT NAME="Publishable_Phone" SIZE=14 ONCHANGE="validatePhone(this)">
+      </TD>
+    </TR>
+    <TR>
+      <TD COLSPAN=3>
+        <HR>
+        <H2>Resource Requests</H2>
+
+        <P>
+          Help us make the Resource Centre at TRAIN relevant to your workshop
+          attendees.  If you have any specific books or resources that you
+          would like brought in by Christian Publications, please fill in as
+          much of the following information as possible.
+        </P>
+
+        <P>
+          You can request additional resources after this form has been
+          submitted.
+        </P>
+      </TD>
+    </TR>
+    <TR>
+      <TD>ISBN:</TD>
+      <TD CLASS="Required">&nbsp;</TD>
+      <TD>
+        <INPUT TYPE=TEXT NAME="Resource_ISBN" SIZE=13 ONCHANGE="validateISBN(this)">
+      </TD>
+    </TR>
+    <TR>
+      <TD>Title:</TD>
+      <TD CLASS="Required">&nbsp;</TD>
+      <TD><INPUT TYPE=TEXT NAME="Resource_Title" SIZE=40></TD>
+    </TR>
+    <TR>
+      <TD>Author:</TD>
+      <TD CLASS="Required">&nbsp;</TD>
+      <TD><INPUT TYPE=TEXT NAME="Resource_Author" SIZE=40></TD>
+    </TR>
+    <TR>
+      <TD>Publisher:</TD>
+      <TD CLASS="Required">&nbsp;</TD>
+      <TD><INPUT TYPE=TEXT NAME="Resource_Publisher" SIZE=40></TD>
+    </TR>
+    <TR>
+      <TD>Copyright:</TD>
+      <TD CLASS="Required">&nbsp;</TD>
+      <TD>
+        <INPUT TYPE=TEXT NAME="Resource_Copyright" SIZE=4 ONCHANGE="validateNumber(this)">
+      </TD>
+    </TR>
+  </TABLE>
+
+  <P>
+    <SPAN CLASS="Required">*</SPAN> Information is required for these entries.
+  </P>
+
+  <P>
+    <INPUT TYPE=SUBMIT VALUE="Submit" ONCLICK="return isFormValid(this.form)">
+    <INPUT TYPE=RESET VALUE="Start over">
+    <INPUT TYPE=BUTTON VALUE="Cancel" ONCLICK="window.close()">
+  </P>
+</FORM>
+
+</BODY>
+
+</HTML>

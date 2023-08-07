@@ -1,0 +1,45 @@
+@media screen
+{
+  BODY
+  {
+    width:  100%;
+    height:  100%;
+    overflow:  auto;
+  }
+}
+
+DIV#Menu
+{
+  position:  absolute;
+  height:  100%;
+  padding-top:  0px;
+  padding-bottom:  0px;
+}
+
+A.MenuItem
+{
+  background-image:  url("menuItemBackground.gif");
+  background-repeat:  no-repeat;
+}
+
+A.MenuItem:hover
+{
+  background-image:  url("menuItemBackgroundHover.gif");
+}
+
+HTML
+{
+  overflow:  hidden;
+}
+
+IMG.MenuItem
+{
+  margin-top:  4px;
+  background:  transparent;
+}
+
+IMG.MenuItem.Inactive
+{
+  background-image:  url("menuItemBackground.gif");
+  background-repeat:  no-repeat;
+}
