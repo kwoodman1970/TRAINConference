@@ -37,7 +37,7 @@ BODY
 {
   color:  black;
   background-color:  #FFCC33;
-  background-image:  url("/background.gif");
+  background-image:  url("background.gif");
   background-position:  center center;
   background-repeat:  no-repeat;
   background-attachment:  fixed;
@@ -71,7 +71,7 @@ H1
     border:  0px;
     color:  #FF9900;
     background-color:  #FF9900;
-    background-image:  url("/constructionBarrier.gif");
+    background-image:  url("./constructionBarrier.gif");
     background-repeat:  repeat-x;
     height:  15px;
   }
@@ -139,14 +139,14 @@ IMG.Valid
 
 LI
 {
-  list-style-image:  url("/hardhat.gif");
+  list-style-image:  url("hardhat.gif");
 }
 
 @media screen
 {
   LI
   {
-    list-style-image:  url("/hardhatScreen.gif");
+    list-style-image:  url("hardhatScreen.gif");
   }
 }
 

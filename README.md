@@ -83,7 +83,7 @@ We pulled the plug on NetConnect because it never caught on.  I think, over its 
 
 Again, there were few technical improvements compared to the previous year's website.
 
-This was TRAIN Conference's the final year.
+This was TRAIN Conference's final year.
 
 #### Noteable Features
 
